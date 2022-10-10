@@ -1,0 +1,2410 @@
+pip install google-search-results
+Execution output from Oct 9, 2022 10:23 PM
+1KB
+	Stream
+		Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+		Requirement already satisfied: google-search-results in /usr/local/lib/python3.7/dist-packages (2.4.1)
+		Requirement already satisfied: requests in /usr/local/lib/python3.7/dist-packages (from google-search-results) (2.23.0)
+		Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.7/dist-packages (from requests->google-search-results) (2022.9.24)
+		Requirement already satisfied: idna<3,>=2.5 in /usr/local/lib/python3.7/dist-packages (from requests->google-search-results) (2.10)
+		Requirement already satisfied: chardet<4,>=3.0.2 in /usr/local/lib/python3.7/dist-packages (from requests->google-search-results) (3.0.4)
+		Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /usr/local/lib/python3.7/dist-packages (from requests->google-search-results) (1.24.3)
+
+Code cell <Yb8VgFuTUSOJ>
+#%% [code]
+from serpapi import GoogleSearch
+
+params = {
+  "engine": "google_maps",
+  "q": "mie ayam",
+  "ll": "@-6.9978354,110.4072681,15z",
+  "type": "search",
+  "api_key": "7dfc31a930d42a121191611e0a3617a7a8ada1e3fdaee846bce20f8e64576826"
+}
+
+search = GoogleSearch(params)
+results = search.get_dict()
+local_results = results["local_results"]
+
+Code cell <wiMH7EVzpJCI>
+#%% [code]
+from google.colab import drive
+drive.mount('/content/drive')
+
+Code cell <Q6OhINZ0V4R4>
+#%% [code]
+local_results
+Execution output from Oct 9, 2022 10:23 PM
+31KB
+	text/plain
+		[{'position': 1,
+		  'title': 'Mie Ayam Pak Djo Sari Roso',
+		  'place_id': 'ChIJFZIPHlCLcC4RQauHiUeZFV8',
+		  'data_id': '0x2e708b501e0f9215:0x5f1599478987ab41',
+		  'data_cid': '6851550940643175233',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b501e0f9215%3A0x5f1599478987ab41&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b501e0f9215%3A0x5f1599478987ab41&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -6.9849083, 'longitude': 110.4143421},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b501e0f9215%3A0x5f1599478987ab41%218m2%213d-6.9849083%214d110.4143421&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.5,
+		  'reviews': 265,
+		  'unclaimed_listing': True,
+		  'type': 'Noodle shop',
+		  'address': '2C87+2PP, Jl. Pekunden Barat, Miroto, Semarang Tengah, Semarang City, Central Java 50134, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 12:30PM Mon',
+		  'hours': 'Closed ⋅ Opens 12:30PM Mon',
+		  'operating_hours': {'sunday': 'Closed',
+		   'monday': '12:30–4PM',
+		   'tuesday': '12:30–4PM',
+		   'wednesday': '12:30–4PM',
+		   'thursday': '12:30–4PM',
+		   'friday': 'Closed',
+		   'saturday': '12:30–4PM'},
+		  'phone': '+62 838-3804-0661',
+		  'service_options': {'dine_in': True, 'takeout': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOz3QEuTlEVh6gyQ19tdhQBrzBCWaojQ78LimZ1=w122-h92-k-no'},
+		 {'position': 2,
+		  'title': 'Bakso & Mie ayam Taman Gajah Mungkur Semarang',
+		  'place_id': 'ChIJa3o8D26LcC4Rnr6Lx1jyKww',
+		  'data_id': '0x2e708b6e0f3c7a6b:0xc2bf258c78bbe9e',
+		  'data_cid': '877061015572561566',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b6e0f3c7a6b%3A0xc2bf258c78bbe9e&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b6e0f3c7a6b%3A0xc2bf258c78bbe9e&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -7.0055388, 'longitude': 110.4087084},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b6e0f3c7a6b%3A0xc2bf258c78bbe9e%218m2%213d-7.0055388%214d110.4087084&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.4,
+		  'reviews': 479,
+		  'unclaimed_listing': True,
+		  'type': 'Noodle shop',
+		  'address': 'XCV5+QFP, Gajahmungkur, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50232, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 9:30AM Mon',
+		  'hours': 'Closed ⋅ Opens 9:30AM Mon',
+		  'operating_hours': {'sunday': '9:30AM–2:30PM',
+		   'monday': '9:30AM–2:30PM',
+		   'tuesday': '9:30AM–2:30PM',
+		   'wednesday': '9:30AM–2:30PM',
+		   'thursday': '9:30AM–2:30PM',
+		   'friday': '9:30AM–2:30PM',
+		   'saturday': '9:30AM–2:30PM'},
+		  'phone': '+62 813-9042-5667',
+		  'service_options': {'dine_in': True, 'takeout': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOjy_HMn3hOI5PA_OFHEuRdQGXRXwEr6Pl8Ag4F=w80-h92-k-no'},
+		 {'position': 3,
+		  'title': 'Mie Ayam Ceker Sido Mampir',
+		  'place_id': 'ChIJU8fQU2CLcC4RvsyZSdAnxeY',
+		  'data_id': '0x2e708b6053d0c753:0xe6c527d04999ccbe',
+		  'data_cid': '16628740974676921534',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b6053d0c753%3A0xe6c527d04999ccbe&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b6053d0c753%3A0xe6c527d04999ccbe&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -6.9978782, 'longitude': 110.4237476},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b6053d0c753%3A0xe6c527d04999ccbe%218m2%213d-6.9978782%214d110.4237476&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.6,
+		  'reviews': 249,
+		  'price': '$',
+		  'unclaimed_listing': True,
+		  'type': 'Noodle shop',
+		  'address': '2C2F+RFX, Pleburan, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50241, Indonesia',
+		  'open_state': 'Open ⋅ Closes 12AM',
+		  'hours': 'Open ⋅ Closes 12AM',
+		  'operating_hours': {'sunday': '4PM–12AM',
+		   'monday': '4PM–12AM',
+		   'tuesday': '4PM–12AM',
+		   'wednesday': '4PM–12AM',
+		   'thursday': '4PM–12AM',
+		   'friday': '4PM–12AM',
+		   'saturday': '4PM–12AM'},
+		  'service_options': {'dine_in': True, 'takeout': True, 'delivery': False},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipPEgyfws5X0yv4qXfT3VSHdjEFws8OhOqEbZxfm=w80-h106-k-no'},
+		 {'position': 4,
+		  'title': 'Mie Ayam & Bakso Sultan',
+		  'place_id': 'ChIJ2enN_WGLcC4R0to5gko2Blc',
+		  'data_id': '0x2e708b61fdcde9d9:0x5706364a8239dad2',
+		  'data_cid': '6270759224800303826',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b61fdcde9d9%3A0x5706364a8239dad2&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b61fdcde9d9%3A0x5706364a8239dad2&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -7.0001644, 'longitude': 110.42506689999999},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b61fdcde9d9%3A0x5706364a8239dad2%218m2%213d-7.0001644%214d110.42506689999999&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.5,
+		  'reviews': 217,
+		  'type': 'Noodle shop',
+		  'address': 'Jl. Pleburan VIII No.12, Pleburan, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50242, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 11AM Mon',
+		  'hours': 'Closed ⋅ Opens 11AM Mon',
+		  'operating_hours': {'sunday': 'Closed',
+		   'monday': '11AM–9PM',
+		   'tuesday': '11AM–9PM',
+		   'wednesday': '11AM–9PM',
+		   'thursday': '11AM–9PM',
+		   'friday': '1–9PM',
+		   'saturday': '11AM–9PM'},
+		  'phone': '+62 817-422-111',
+		  'service_options': {'dine_in': True,
+		   'drive_through': True,
+		   'no_contact_delivery': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipMiQdkOMBEfUL_NADjYdqV0Eu9ezf_YfV3pzqJI=w80-h106-k-no'},
+		 {'position': 5,
+		  'title': 'Mie Ayam Jakarta 888',
+		  'place_id': 'ChIJweRTQBOLcC4RhHpk6JuLNoE',
+		  'data_id': '0x2e708b134053e4c1:0x81368b9be8647a84',
+		  'data_cid': '9310782781370169988',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b134053e4c1%3A0x81368b9be8647a84&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b134053e4c1%3A0x81368b9be8647a84&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -7.002864499999999,
+		   'longitude': 110.4010461},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b134053e4c1%3A0x81368b9be8647a84%218m2%213d-7.002864499999999%214d110.4010461&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.1,
+		  'reviews': 7,
+		  'unclaimed_listing': True,
+		  'type': 'Noodle shop',
+		  'address': 'XCW2+VC3, Jl. Taman Kelud, Petompon, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50237, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 8AM Mon',
+		  'hours': 'Closed ⋅ Opens 8AM Mon',
+		  'operating_hours': {'sunday': 'Closed',
+		   'monday': '8AM–8PM',
+		   'tuesday': '8AM–8PM',
+		   'wednesday': '8AM–8PM',
+		   'thursday': '8AM–8PM',
+		   'friday': '8AM–8PM',
+		   'saturday': '8AM–8PM'},
+		  'phone': '+62 816-697-323',
+		  'service_options': {'dine_in': True, 'takeout': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOMnaRNlIno1QTaCgTfAMXKhRdjHLJ8Y-som6Wh=w163-h92-k-no'},
+		 {'position': 6,
+		  'title': 'Bakso & Mie Ayam Adi Roso',
+		  'place_id': 'ChIJocU-RQ6LcC4R7RUUTLW6ez0',
+		  'data_id': '0x2e708b0e453ec5a1:0x3d7bbab54c1415ed',
+		  'data_cid': '4430339946277246445',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b0e453ec5a1%3A0x3d7bbab54c1415ed&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b0e453ec5a1%3A0x3d7bbab54c1415ed&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -7.0089672, 'longitude': 110.3943675},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b0e453ec5a1%3A0x3d7bbab54c1415ed%218m2%213d-7.0089672%214d110.3943675&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.2,
+		  'reviews': 327,
+		  'unclaimed_listing': True,
+		  'type': 'Noodle shop',
+		  'address': 'Jl. Menoreh Raya No.9, Sampangan, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50232, Indonesia',
+		  'open_state': 'Closes soon ⋅ 11PM ⋅ Opens 10AM Mon',
+		  'hours': 'Closes soon ⋅ 11PM ⋅ Opens 10AM Mon',
+		  'operating_hours': {'sunday': '10AM–11PM',
+		   'monday': '10AM–11PM',
+		   'tuesday': '10AM–11PM',
+		   'wednesday': '10AM–11PM',
+		   'thursday': '10AM–11PM',
+		   'friday': '10AM–11PM',
+		   'saturday': '10AM–11PM'},
+		  'phone': '+62 812-2749-5545',
+		  'service_options': {'dine_in': True, 'takeout': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipM_20EFufrhnbeX5iDdCh1vDmP4s9ivoRlO0W2a=w80-h106-k-no'},
+		 {'position': 7,
+		  'title': 'Mie Kangtaw',
+		  'place_id': 'ChIJ-VTtJKGLcC4RqWpWVh853EE',
+		  'data_id': '0x2e708ba124ed54f9:0x41dc391f56566aa9',
+		  'data_cid': '4745730914096933545',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708ba124ed54f9%3A0x41dc391f56566aa9&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708ba124ed54f9%3A0x41dc391f56566aa9&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -6.9870801, 'longitude': 110.3949308},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708ba124ed54f9%3A0x41dc391f56566aa9%218m2%213d-6.9870801%214d110.3949308&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.6,
+		  'reviews': 11,
+		  'type': 'Noodle shop',
+		  'address': 'Jl. Puspowarno IX No.4, Salamanmloyo, Semarang Barat, Semarang City, Central Java 50143, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 9AM Mon',
+		  'hours': 'Closed ⋅ Opens 9AM Mon',
+		  'operating_hours': {'sunday': 'Closed',
+		   'monday': '9AM–9PM',
+		   'tuesday': '9AM–9PM',
+		   'wednesday': '9AM–9PM',
+		   'thursday': '9AM–9PM',
+		   'friday': '9AM–9PM',
+		   'saturday': '9AM–9PM'},
+		  'phone': '+62 813-9074-7667',
+		  'service_options': {'dine_in': True, 'takeout': True, 'delivery': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipPktAdIYKdpSOZtzbQ-LDa_ge7oKvqUvw0Zu3ib=w80-h106-k-no'},
+		 {'position': 8,
+		  'title': 'Mie Ayam Jamur Pleburan',
+		  'place_id': 'ChIJudF-E2CLcC4RJV_yOWRG08w',
+		  'data_id': '0x2e708b60137ed1b9:0xccd3466439f25f25',
+		  'data_cid': '14759217800106106661',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b60137ed1b9%3A0xccd3466439f25f25&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b60137ed1b9%3A0xccd3466439f25f25&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -6.9965313, 'longitude': 110.42485269999999},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b60137ed1b9%3A0xccd3466439f25f25%218m2%213d-6.9965313%214d110.42485269999999&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.1,
+		  'reviews': 28,
+		  'unclaimed_listing': True,
+		  'type': 'Noodle shop',
+		  'address': 'Jl. Pleburan Barat No.33, Pleburan, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50241, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 10AM Mon',
+		  'hours': 'Closed ⋅ Opens 10AM Mon',
+		  'operating_hours': {'sunday': '10AM–8:30PM',
+		   'monday': '10AM–8:30PM',
+		   'tuesday': '10AM–8:30PM',
+		   'wednesday': '10AM–8:30PM',
+		   'thursday': '10AM–8:30PM',
+		   'friday': '10AM–8:30PM',
+		   'saturday': '10AM–8:30PM'},
+		  'service_options': {'dine_in': True, 'takeout': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOkBbgKy_FDFYSIpbDWfNhkPoXp8cvnFaGG88Qi=w92-h92-k-no'},
+		 {'position': 9,
+		  'title': 'MIE AYAM PAK MIN',
+		  'place_id': 'ChIJeZwNHuyLcC4Rv4csB6CueJg',
+		  'data_id': '0x2e708bec1e0d9c79:0x9878aea0072c87bf',
+		  'data_cid': '10986723293308684223',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708bec1e0d9c79%3A0x9878aea0072c87bf&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708bec1e0d9c79%3A0x9878aea0072c87bf&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -6.9902158, 'longitude': 110.4241685},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708bec1e0d9c79%3A0x9878aea0072c87bf%218m2%213d-6.9902158%214d110.4241685&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 5,
+		  'reviews': 1,
+		  'unclaimed_listing': True,
+		  'type': 'Noodle shop',
+		  'address': 'Jl. Simpang Lima No.101, Karangkidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50241, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 10AM Mon',
+		  'hours': 'Closed ⋅ Opens 10AM Mon',
+		  'operating_hours': {'sunday': '10AM–9PM',
+		   'monday': '10AM–9PM',
+		   'tuesday': '10AM–9PM',
+		   'wednesday': '10AM–9PM',
+		   'thursday': '10AM–9PM',
+		   'friday': '10AM–9PM',
+		   'saturday': '10AM–9PM'},
+		  'phone': '+62 817-9514-447',
+		  'service_options': {'dine_in': True, 'takeout': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipMvAa6aEZpWdlSaB2Hi8BJZj4a5tXXDqM6GouiY=w163-h92-k-no'},
+		 {'position': 10,
+		  'title': 'Mie Ayam Joy',
+		  'place_id': 'ChIJs0JAglmLcC4RApxjiqKEw3o',
+		  'data_id': '0x2e708b59824042b3:0x7ac384a28a639c02',
+		  'data_cid': '8846059926727138306',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b59824042b3%3A0x7ac384a28a639c02&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b59824042b3%3A0x7ac384a28a639c02&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -6.988065799999999,
+		   'longitude': 110.4207328},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b59824042b3%3A0x7ac384a28a639c02%218m2%213d-6.988065799999999%214d110.4207328&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.6,
+		  'reviews': 104,
+		  'unclaimed_listing': True,
+		  'type': 'Noodle shop',
+		  'address': 'Jl. Pekunden Timur No.28, Pekunden, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50241, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 9AM Mon',
+		  'hours': 'Closed ⋅ Opens 9AM Mon',
+		  'operating_hours': {'sunday': 'Closed',
+		   'monday': '9AM–5:30PM',
+		   'tuesday': '9AM–5:30PM',
+		   'wednesday': '9AM–5:30PM',
+		   'thursday': '9AM–5:30PM',
+		   'friday': '9AM–5:30PM',
+		   'saturday': '9AM–5:30PM'},
+		  'phone': '+62 24 8318946',
+		  'service_options': {'dine_in': True,
+		   'takeout': True,
+		   'no_contact_delivery': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOBffGFCFnlJAD71uP1vwM079pwjEjay2zH--4=w80-h142-k-no'},
+		 {'position': 11,
+		  'title': 'Warung Mie Ayam dan Bakso 17 Spesial Bumbu Bali',
+		  'place_id': 'ChIJR2S200eLcC4RnBN1GAVJaQo',
+		  'data_id': '0x2e708b47d3b66447:0xa6949051875139c',
+		  'data_cid': '750211099167888284',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b47d3b66447%3A0xa6949051875139c&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b47d3b66447%3A0xa6949051875139c&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -6.986650099999999, 'longitude': 110.405243},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b47d3b66447%3A0xa6949051875139c%218m2%213d-6.986650099999999%214d110.405243&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.3,
+		  'reviews': 209,
+		  'unclaimed_listing': True,
+		  'type': 'Noodle shop',
+		  'address': '2C74+83Q, Jalan Suyudono, Bulustalan, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50245, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 10AM Mon',
+		  'hours': 'Closed ⋅ Opens 10AM Mon',
+		  'operating_hours': {'sunday': '10AM–10PM',
+		   'monday': '10AM–10PM',
+		   'tuesday': '10AM–10PM',
+		   'wednesday': '10AM–10PM',
+		   'thursday': '10AM–10PM',
+		   'friday': '10AM–10PM',
+		   'saturday': '10AM–10PM'},
+		  'phone': '+62 24 3569231',
+		  'service_options': {'dine_in': True, 'takeout': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipPxlQ2hbO_qoj8eLLsou30YbSZfrY4T2Yqm9ejq=w80-h106-k-no'},
+		 {'position': 12,
+		  'title': 'Mie Ayam Bu Catur Bergota',
+		  'place_id': 'ChIJYTAhnUOLcC4Rpm__kGESiBs',
+		  'data_id': '0x2e708b439d213061:0x1b88126190ff6fa6',
+		  'data_cid': '1983855846110490534',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b439d213061%3A0x1b88126190ff6fa6&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b439d213061%3A0x1b88126190ff6fa6&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -6.991713799999999,
+		   'longitude': 110.4112435},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b439d213061%3A0x1b88126190ff6fa6%218m2%213d-6.991713799999999%214d110.4112435&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.6,
+		  'reviews': 89,
+		  'type': 'Noodle shop',
+		  'address': 'Jl. Bergota Krajan No.536, Randusari, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50244, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 9AM Mon',
+		  'hours': 'Closed ⋅ Opens 9AM Mon',
+		  'operating_hours': {'sunday': '9AM–7PM',
+		   'monday': '9AM–7PM',
+		   'tuesday': '9AM–7PM',
+		   'wednesday': '9AM–7PM',
+		   'thursday': '9AM–7PM',
+		   'friday': '9AM–7PM',
+		   'saturday': '9AM–7PM'},
+		  'phone': '+62 821-3556-0060',
+		  'service_options': {'dine_in': True, 'takeout': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOZ4iQ9eBKNBYEPJ3OYPk4vukzonXneFCkRI7nx=w163-h92-k-no'},
+		 {'position': 13,
+		  'title': 'Mie Ayam & Bakso Mulyosari 2',
+		  'place_id': 'ChIJm5TaDA-LcC4ROPUBSJHT6Ak',
+		  'data_id': '0x2e708b0f0cda949b:0x9e8d3914801f538',
+		  'data_cid': '714053161870030136',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b0f0cda949b%3A0x9e8d3914801f538&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b0f0cda949b%3A0x9e8d3914801f538&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -7.0125002, 'longitude': 110.39069099999999},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b0f0cda949b%3A0x9e8d3914801f538%218m2%213d-7.0125002%214d110.39069099999999&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.6,
+		  'reviews': 59,
+		  'type': 'Noodle shop',
+		  'address': 'Jl. Menoreh Raya No.79, Sampangan, Gajahmungkur, Semarang City, Central Java 50232, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 10AM Mon',
+		  'hours': 'Closed ⋅ Opens 10AM Mon',
+		  'operating_hours': {'sunday': '10AM–9PM',
+		   'monday': '10AM–9PM',
+		   'tuesday': '10AM–9PM',
+		   'wednesday': '10AM–9PM',
+		   'thursday': '10AM–9PM',
+		   'friday': '10AM–9PM',
+		   'saturday': '10AM–9PM'},
+		  'phone': '+62 813-1417-0705',
+		  'website': 'http://mieayambaksomulyosari2.business.site/',
+		  'service_options': {'dine_in': True, 'takeout': True, 'delivery': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipNJJJG2ruClApAFVGRzOyymznaEJ098Q6AxCa0L=w80-h106-k-no'},
+		 {'position': 14,
+		  'title': 'Mie Ayam & Bakso "MAJU JAYA" 354',
+		  'place_id': 'ChIJzXsj8myLcC4RURLOVFL8-ZI',
+		  'data_id': '0x2e708b6cf2237bcd:0x92f9fc5254ce1251',
+		  'data_cid': '10590773429278741073',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b6cf2237bcd%3A0x92f9fc5254ce1251&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b6cf2237bcd%3A0x92f9fc5254ce1251&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -6.9927559, 'longitude': 110.4009729},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b6cf2237bcd%3A0x92f9fc5254ce1251%218m2%213d-6.9927559%214d110.4009729&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 5,
+		  'reviews': 5,
+		  'unclaimed_listing': True,
+		  'type': 'Restaurant',
+		  'address': 'Jl. Simongan No.29b, RW.04, Bojongsalaman, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50141, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 11AM Mon',
+		  'hours': 'Closed ⋅ Opens 11AM Mon',
+		  'operating_hours': {'sunday': '11AM–9PM',
+		   'monday': '11AM–9PM',
+		   'tuesday': '11AM–9PM',
+		   'wednesday': '11AM–9PM',
+		   'thursday': '11AM–9PM',
+		   'friday': 'Closed',
+		   'saturday': '11AM–9PM'},
+		  'phone': '+62 877-7357-6629',
+		  'service_options': {'dine_in': True, 'takeout': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipO3JfDTPgk_A3kHnz0Tjoz1d0j10LacvOTcb_Nm=w122-h92-k-no'},
+		 {'position': 15,
+		  'title': 'Bakso Kakap & Mie Ayam Pangsit',
+		  'place_id': 'ChIJQ1HyL4GLcC4RH-pk1tgfXR4',
+		  'data_id': '0x2e708b812ff25143:0x1e5d1fd8d664ea1f',
+		  'data_cid': '2187940010142263839',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b812ff25143%3A0x1e5d1fd8d664ea1f&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b812ff25143%3A0x1e5d1fd8d664ea1f&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -6.9909672, 'longitude': 110.3888149},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b812ff25143%3A0x1e5d1fd8d664ea1f%218m2%213d-6.9909672%214d110.3888149&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.5,
+		  'reviews': 23,
+		  'type': 'Bakso restaurant',
+		  'address': '50149, Jl. Kumudasmoro Selatan No.1B, Gisikdrono, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50149, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 9AM Mon',
+		  'hours': 'Closed ⋅ Opens 9AM Mon',
+		  'operating_hours': {'sunday': '9AM–9:30PM',
+		   'monday': '9AM–9:30PM',
+		   'tuesday': '9AM–9:30PM',
+		   'wednesday': '9AM–9:30PM',
+		   'thursday': '9AM–9:30PM',
+		   'friday': '9AM–6PM',
+		   'saturday': '9AM–9:30PM'},
+		  'phone': '+62 896-9364-8602',
+		  'website': 'https://bakso-kakap-puchu-mie-ayam-pangsit.business.site/',
+		  'service_options': {'dine_in': True, 'takeout': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipPeDVtnr2u0ybkLWaS4RXlfvlzZ5gPzuJg4xfax=w80-h100-k-no'},
+		 {'position': 16,
+		  'title': 'warung bakso & mie ayam',
+		  'place_id': 'ChIJraq6k3qLcC4Rtw47mdVfDZE',
+		  'data_id': '0x2e708b7a93baaaad:0x910d5fd5993b0eb7',
+		  'data_cid': '10452115681200246455',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b7a93baaaad%3A0x910d5fd5993b0eb7&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b7a93baaaad%3A0x910d5fd5993b0eb7&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -7.0078628, 'longitude': 110.4155737},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b7a93baaaad%3A0x910d5fd5993b0eb7%218m2%213d-7.0078628%214d110.4155737&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 5,
+		  'reviews': 1,
+		  'unclaimed_listing': True,
+		  'type': 'Bakso restaurant',
+		  'address': 'XCR8+V64, Jl. Raung, Gajahmungkur, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50232, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 10AM Mon',
+		  'hours': 'Closed ⋅ Opens 10AM Mon',
+		  'operating_hours': {'sunday': '10AM–9:30PM',
+		   'monday': '10AM–9:30PM',
+		   'tuesday': '10AM–9:30PM',
+		   'wednesday': '10AM–9:30PM',
+		   'thursday': '10AM–9:30PM',
+		   'friday': '10AM–9:30PM',
+		   'saturday': '10AM–9:30PM'},
+		  'service_options': {'dine_in': True, 'takeout': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipP21fJ-3U-mCyvZMgaRwyPgtPKHgioQDZgqE2g=w163-h92-k-no'},
+		 {'position': 17,
+		  'title': 'Mie Ayam Bakso Pak Yanto',
+		  'place_id': 'ChIJ1WEkixWLcC4RUJRcFaxyA0w',
+		  'data_id': '0x2e708b158b2461d5:0x4c0372ac155c9450',
+		  'data_cid': '5477347655230985296',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b158b2461d5%3A0x4c0372ac155c9450&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b158b2461d5%3A0x4c0372ac155c9450&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -6.9971165, 'longitude': 110.3974884},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b158b2461d5%3A0x4c0372ac155c9450%218m2%213d-6.9971165%214d110.3974884&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.3,
+		  'reviews': 274,
+		  'price': '$',
+		  'type': 'Bakso restaurant',
+		  'address': 'Jl. Condrokusumo Raya No.6, Bongsari, Semarang Barat, Semarang City, Central Java 50148, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 11AM Mon',
+		  'hours': 'Closed ⋅ Opens 11AM Mon',
+		  'operating_hours': {'sunday': '11AM–10PM',
+		   'monday': '11AM–10PM',
+		   'tuesday': '11AM–10PM',
+		   'wednesday': '11AM–10PM',
+		   'thursday': '11AM–10PM',
+		   'friday': '11AM–10PM',
+		   'saturday': '11AM–10PM'},
+		  'phone': '+62 821-3358-8549',
+		  'website': 'https://mie-ayam-bakso-pak-yanto.business.site/',
+		  'service_options': {'dine_in': True, 'takeout': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipO2JDkf_9XBtvYJDJ1IAjoy8wK2s4rwpWRZyyaO=w80-h142-k-no'},
+		 {'position': 18,
+		  'title': 'Mie Ayam Pak Min',
+		  'place_id': 'ChIJD6FbAVyLcC4RGNvP7jYGuYs',
+		  'data_id': '0x2e708b5c015ba10f:0x8bb90636eecfdb18',
+		  'data_cid': '10068085274968054552',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b5c015ba10f%3A0x8bb90636eecfdb18&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b5c015ba10f%3A0x8bb90636eecfdb18&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -6.9893459, 'longitude': 110.41990489999999},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b5c015ba10f%3A0x8bb90636eecfdb18%218m2%213d-6.9893459%214d110.41990489999999&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.5,
+		  'reviews': 1131,
+		  'unclaimed_listing': True,
+		  'type': 'Noodle shop',
+		  'address': 'Jl. Pandanaran No.2, Mugassari, Semarang Selatan, Semarang City, Central Java 50249, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 11AM Mon',
+		  'hours': 'Closed ⋅ Opens 11AM Mon',
+		  'operating_hours': {'sunday': '11AM–5PM',
+		   'monday': '11AM–5PM',
+		   'tuesday': '11AM–5PM',
+		   'wednesday': '11AM–5PM',
+		   'thursday': '11AM–5PM',
+		   'friday': '11AM–5PM',
+		   'saturday': '11AM–5PM'},
+		  'phone': '+62 813-2651-5220',
+		  'service_options': {'dine_in': True,
+		   'takeout': True,
+		   'no_contact_delivery': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOkPRHvMadyhkb0kCZ0i5nt2-oTv6W-jOfu93Yl=w122-h92-k-no'},
+		 {'position': 19,
+		  'title': 'Mie Ayam Argopuro',
+		  'place_id': 'ChIJQ8IbkG-LcC4RJVnHYkEiHMg',
+		  'data_id': '0x2e708b6f901bc243:0xc81c224162c75925',
+		  'data_cid': '14419437771158935845',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b6f901bc243%3A0xc81c224162c75925&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b6f901bc243%3A0xc81c224162c75925&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -7.0043441, 'longitude': 110.4140201},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b6f901bc243%3A0xc81c224162c75925%218m2%213d-7.0043441%214d110.4140201&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.4,
+		  'reviews': 88,
+		  'type': 'Noodle shop',
+		  'address': 'Jl. Argopuro No.24, Lempongsari, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50231, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 10AM Mon',
+		  'hours': 'Closed ⋅ Opens 10AM Mon',
+		  'operating_hours': {'sunday': '10AM–6PM',
+		   'monday': '10AM–6PM',
+		   'tuesday': '10AM–6PM',
+		   'wednesday': '10AM–6PM',
+		   'thursday': '10AM–6PM',
+		   'friday': '10AM–6PM',
+		   'saturday': '10AM–6PM'},
+		  'phone': '+62 899-8300-215',
+		  'service_options': {'dine_in': True, 'takeout': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOGgSdyYTmkDHwg4KjkFbQqal5J9aHSgUviViHr=w163-h92-k-no'},
+		 {'position': 20,
+		  'title': 'Mie Ayam Bakso Sri Sumarni',
+		  'place_id': 'ChIJW5nS72eLcC4RhMMiZNfKZiU',
+		  'data_id': '0x2e708b67efd2995b:0x2566cad76422c384',
+		  'data_cid': '2695064453474599812',
+		  'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b67efd2995b%3A0x2566cad76422c384&engine=google_maps_reviews&hl=en',
+		  'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b67efd2995b%3A0x2566cad76422c384&engine=google_maps_photos&hl=en',
+		  'gps_coordinates': {'latitude': -7.013534099999999,
+		   'longitude': 110.3949988},
+		  'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b67efd2995b%3A0x2566cad76422c384%218m2%213d-7.013534099999999%214d110.3949988&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		  'rating': 4.9,
+		  'reviews': 23,
+		  'type': 'Restaurant',
+		  'address': 'Stiepari Kampus Pascasarjana, Jl. Lamongan Raya, Sampangan, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50232, Indonesia',
+		  'open_state': 'Closed ⋅ Opens 11AM Mon',
+		  'hours': 'Closed ⋅ Opens 11AM Mon',
+		  'operating_hours': {'sunday': '11AM–8PM',
+		   'monday': '11AM–8PM',
+		   'tuesday': '11AM–8PM',
+		   'wednesday': '11AM–8PM',
+		   'thursday': '11AM–8PM',
+		   'friday': '11AM–8PM',
+		   'saturday': '11AM–8PM'},
+		  'phone': '+62 857-4201-2821',
+		  'service_options': {'dine_in': True, 'takeout': True, 'delivery': True},
+		  'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOXl7uz-SQpnJO9PnYLz6P6R_gYJ8RyaqPqF3zt=w92-h92-k-no'}]
+
+Code cell <wSnp2z3aV_78>
+#%% [code]
+#1
+from serpapi import GoogleSearch
+
+params = {
+  "engine": "google_maps_reviews",
+  "data_id": "0x2e708b501e0f9215:0x5f1599478987ab41",
+  "api_key": "7dfc31a930d42a121191611e0a3617a7a8ada1e3fdaee846bce20f8e64576826"
+}
+
+search = GoogleSearch(params)
+results = search.get_dict()
+reviews = results["reviews"]
+
+
+
+Code cell <vJiMC99cWKEq>
+#%% [code]
+results
+Execution output from Oct 9, 2022 10:29 PM
+32KB
+	text/plain
+		{'search_metadata': {'id': '6342e748e13508f1c25a5b31',
+		  'status': 'Success',
+		  'json_endpoint': 'https://serpapi.com/searches/0b8e660a3c8c66bf/6342e748e13508f1c25a5b31.json',
+		  'created_at': '2022-10-09 15:22:48 UTC',
+		  'processed_at': '2022-10-09 15:22:48 UTC',
+		  'google_maps_url': 'https://www.google.com/maps/search/@-6.9978354,110.4072681,15z/mie+ayam?hl=en',
+		  'raw_html_file': 'https://serpapi.com/searches/f341e357058c263b/6342e748e13508f1c25a5b31.html',
+		  'total_time_taken': 1.24},
+		 'search_parameters': {'engine': 'google_maps',
+		  'type': 'search',
+		  'q': 'mie ayam',
+		  'll': '@-6.9978354,110.4072681,15z',
+		  'google_domain': 'google.com',
+		  'hl': 'en'},
+		 'search_information': {'local_results_state': 'Results for exact spelling',
+		  'query_displayed': 'mie ayam'},
+		 'local_results': [{'position': 1,
+		   'title': 'Mie Ayam Pak Djo Sari Roso',
+		   'place_id': 'ChIJFZIPHlCLcC4RQauHiUeZFV8',
+		   'data_id': '0x2e708b501e0f9215:0x5f1599478987ab41',
+		   'data_cid': '6851550940643175233',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b501e0f9215%3A0x5f1599478987ab41&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b501e0f9215%3A0x5f1599478987ab41&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9849083, 'longitude': 110.4143421},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b501e0f9215%3A0x5f1599478987ab41%218m2%213d-6.9849083%214d110.4143421&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.5,
+		   'reviews': 265,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': '2C87+2PP, Jl. Pekunden Barat, Miroto, Semarang Tengah, Semarang City, Central Java 50134, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 12:30PM Mon',
+		   'hours': 'Closed ⋅ Opens 12:30PM Mon',
+		   'operating_hours': {'sunday': 'Closed',
+		    'monday': '12:30–4PM',
+		    'tuesday': '12:30–4PM',
+		    'wednesday': '12:30–4PM',
+		    'thursday': '12:30–4PM',
+		    'friday': 'Closed',
+		    'saturday': '12:30–4PM'},
+		   'phone': '+62 838-3804-0661',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOz3QEuTlEVh6gyQ19tdhQBrzBCWaojQ78LimZ1=w122-h92-k-no'},
+		  {'position': 2,
+		   'title': 'Bakso & Mie ayam Taman Gajah Mungkur Semarang',
+		   'place_id': 'ChIJa3o8D26LcC4Rnr6Lx1jyKww',
+		   'data_id': '0x2e708b6e0f3c7a6b:0xc2bf258c78bbe9e',
+		   'data_cid': '877061015572561566',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b6e0f3c7a6b%3A0xc2bf258c78bbe9e&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b6e0f3c7a6b%3A0xc2bf258c78bbe9e&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -7.0055388, 'longitude': 110.4087084},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b6e0f3c7a6b%3A0xc2bf258c78bbe9e%218m2%213d-7.0055388%214d110.4087084&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.4,
+		   'reviews': 479,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': 'XCV5+QFP, Gajahmungkur, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50232, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 9:30AM Mon',
+		   'hours': 'Closed ⋅ Opens 9:30AM Mon',
+		   'operating_hours': {'sunday': '9:30AM–2:30PM',
+		    'monday': '9:30AM–2:30PM',
+		    'tuesday': '9:30AM–2:30PM',
+		    'wednesday': '9:30AM–2:30PM',
+		    'thursday': '9:30AM–2:30PM',
+		    'friday': '9:30AM–2:30PM',
+		    'saturday': '9:30AM–2:30PM'},
+		   'phone': '+62 813-9042-5667',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOjy_HMn3hOI5PA_OFHEuRdQGXRXwEr6Pl8Ag4F=w80-h92-k-no'},
+		  {'position': 3,
+		   'title': 'Mie Ayam Ceker Sido Mampir',
+		   'place_id': 'ChIJU8fQU2CLcC4RvsyZSdAnxeY',
+		   'data_id': '0x2e708b6053d0c753:0xe6c527d04999ccbe',
+		   'data_cid': '16628740974676921534',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b6053d0c753%3A0xe6c527d04999ccbe&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b6053d0c753%3A0xe6c527d04999ccbe&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9978782, 'longitude': 110.4237476},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b6053d0c753%3A0xe6c527d04999ccbe%218m2%213d-6.9978782%214d110.4237476&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.6,
+		   'reviews': 249,
+		   'price': '$',
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': '2C2F+RFX, Pleburan, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50241, Indonesia',
+		   'open_state': 'Open ⋅ Closes 12AM',
+		   'hours': 'Open ⋅ Closes 12AM',
+		   'operating_hours': {'sunday': '4PM–12AM',
+		    'monday': '4PM–12AM',
+		    'tuesday': '4PM–12AM',
+		    'wednesday': '4PM–12AM',
+		    'thursday': '4PM–12AM',
+		    'friday': '4PM–12AM',
+		    'saturday': '4PM–12AM'},
+		   'service_options': {'dine_in': True, 'takeout': True, 'delivery': False},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipPEgyfws5X0yv4qXfT3VSHdjEFws8OhOqEbZxfm=w80-h106-k-no'},
+		  {'position': 4,
+		   'title': 'Mie Ayam & Bakso Sultan',
+		   'place_id': 'ChIJ2enN_WGLcC4R0to5gko2Blc',
+		   'data_id': '0x2e708b61fdcde9d9:0x5706364a8239dad2',
+		   'data_cid': '6270759224800303826',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b61fdcde9d9%3A0x5706364a8239dad2&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b61fdcde9d9%3A0x5706364a8239dad2&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -7.0001644,
+		    'longitude': 110.42506689999999},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b61fdcde9d9%3A0x5706364a8239dad2%218m2%213d-7.0001644%214d110.42506689999999&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.5,
+		   'reviews': 217,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Pleburan VIII No.12, Pleburan, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50242, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 11AM Mon',
+		   'hours': 'Closed ⋅ Opens 11AM Mon',
+		   'operating_hours': {'sunday': 'Closed',
+		    'monday': '11AM–9PM',
+		    'tuesday': '11AM–9PM',
+		    'wednesday': '11AM–9PM',
+		    'thursday': '11AM–9PM',
+		    'friday': '1–9PM',
+		    'saturday': '11AM–9PM'},
+		   'phone': '+62 817-422-111',
+		   'service_options': {'dine_in': True,
+		    'drive_through': True,
+		    'no_contact_delivery': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipMiQdkOMBEfUL_NADjYdqV0Eu9ezf_YfV3pzqJI=w80-h106-k-no'},
+		  {'position': 5,
+		   'title': 'Mie Ayam Jakarta 888',
+		   'place_id': 'ChIJweRTQBOLcC4RhHpk6JuLNoE',
+		   'data_id': '0x2e708b134053e4c1:0x81368b9be8647a84',
+		   'data_cid': '9310782781370169988',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b134053e4c1%3A0x81368b9be8647a84&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b134053e4c1%3A0x81368b9be8647a84&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -7.002864499999999,
+		    'longitude': 110.4010461},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b134053e4c1%3A0x81368b9be8647a84%218m2%213d-7.002864499999999%214d110.4010461&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.1,
+		   'reviews': 7,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': 'XCW2+VC3, Jl. Taman Kelud, Petompon, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50237, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 8AM Mon',
+		   'hours': 'Closed ⋅ Opens 8AM Mon',
+		   'operating_hours': {'sunday': 'Closed',
+		    'monday': '8AM–8PM',
+		    'tuesday': '8AM–8PM',
+		    'wednesday': '8AM–8PM',
+		    'thursday': '8AM–8PM',
+		    'friday': '8AM–8PM',
+		    'saturday': '8AM–8PM'},
+		   'phone': '+62 816-697-323',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOMnaRNlIno1QTaCgTfAMXKhRdjHLJ8Y-som6Wh=w163-h92-k-no'},
+		  {'position': 6,
+		   'title': 'Bakso & Mie Ayam Adi Roso',
+		   'place_id': 'ChIJocU-RQ6LcC4R7RUUTLW6ez0',
+		   'data_id': '0x2e708b0e453ec5a1:0x3d7bbab54c1415ed',
+		   'data_cid': '4430339946277246445',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b0e453ec5a1%3A0x3d7bbab54c1415ed&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b0e453ec5a1%3A0x3d7bbab54c1415ed&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -7.0089672, 'longitude': 110.3943675},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b0e453ec5a1%3A0x3d7bbab54c1415ed%218m2%213d-7.0089672%214d110.3943675&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.2,
+		   'reviews': 327,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Menoreh Raya No.9, Sampangan, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50232, Indonesia',
+		   'open_state': 'Closes soon ⋅ 11PM ⋅ Opens 10AM Mon',
+		   'hours': 'Closes soon ⋅ 11PM ⋅ Opens 10AM Mon',
+		   'operating_hours': {'sunday': '10AM–11PM',
+		    'monday': '10AM–11PM',
+		    'tuesday': '10AM–11PM',
+		    'wednesday': '10AM–11PM',
+		    'thursday': '10AM–11PM',
+		    'friday': '10AM–11PM',
+		    'saturday': '10AM–11PM'},
+		   'phone': '+62 812-2749-5545',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipM_20EFufrhnbeX5iDdCh1vDmP4s9ivoRlO0W2a=w80-h106-k-no'},
+		  {'position': 7,
+		   'title': 'Mie Kangtaw',
+		   'place_id': 'ChIJ-VTtJKGLcC4RqWpWVh853EE',
+		   'data_id': '0x2e708ba124ed54f9:0x41dc391f56566aa9',
+		   'data_cid': '4745730914096933545',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708ba124ed54f9%3A0x41dc391f56566aa9&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708ba124ed54f9%3A0x41dc391f56566aa9&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9870801, 'longitude': 110.3949308},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708ba124ed54f9%3A0x41dc391f56566aa9%218m2%213d-6.9870801%214d110.3949308&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.6,
+		   'reviews': 11,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Puspowarno IX No.4, Salamanmloyo, Semarang Barat, Semarang City, Central Java 50143, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 9AM Mon',
+		   'hours': 'Closed ⋅ Opens 9AM Mon',
+		   'operating_hours': {'sunday': 'Closed',
+		    'monday': '9AM–9PM',
+		    'tuesday': '9AM–9PM',
+		    'wednesday': '9AM–9PM',
+		    'thursday': '9AM–9PM',
+		    'friday': '9AM–9PM',
+		    'saturday': '9AM–9PM'},
+		   'phone': '+62 813-9074-7667',
+		   'service_options': {'dine_in': True, 'takeout': True, 'delivery': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipPktAdIYKdpSOZtzbQ-LDa_ge7oKvqUvw0Zu3ib=w80-h106-k-no'},
+		  {'position': 8,
+		   'title': 'Mie Ayam Jamur Pleburan',
+		   'place_id': 'ChIJudF-E2CLcC4RJV_yOWRG08w',
+		   'data_id': '0x2e708b60137ed1b9:0xccd3466439f25f25',
+		   'data_cid': '14759217800106106661',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b60137ed1b9%3A0xccd3466439f25f25&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b60137ed1b9%3A0xccd3466439f25f25&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9965313,
+		    'longitude': 110.42485269999999},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b60137ed1b9%3A0xccd3466439f25f25%218m2%213d-6.9965313%214d110.42485269999999&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.1,
+		   'reviews': 28,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Pleburan Barat No.33, Pleburan, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50241, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 10AM Mon',
+		   'hours': 'Closed ⋅ Opens 10AM Mon',
+		   'operating_hours': {'sunday': '10AM–8:30PM',
+		    'monday': '10AM–8:30PM',
+		    'tuesday': '10AM–8:30PM',
+		    'wednesday': '10AM–8:30PM',
+		    'thursday': '10AM–8:30PM',
+		    'friday': '10AM–8:30PM',
+		    'saturday': '10AM–8:30PM'},
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOkBbgKy_FDFYSIpbDWfNhkPoXp8cvnFaGG88Qi=w92-h92-k-no'},
+		  {'position': 9,
+		   'title': 'MIE AYAM PAK MIN',
+		   'place_id': 'ChIJeZwNHuyLcC4Rv4csB6CueJg',
+		   'data_id': '0x2e708bec1e0d9c79:0x9878aea0072c87bf',
+		   'data_cid': '10986723293308684223',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708bec1e0d9c79%3A0x9878aea0072c87bf&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708bec1e0d9c79%3A0x9878aea0072c87bf&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9902158, 'longitude': 110.4241685},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708bec1e0d9c79%3A0x9878aea0072c87bf%218m2%213d-6.9902158%214d110.4241685&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 5,
+		   'reviews': 1,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Simpang Lima No.101, Karangkidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50241, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 10AM Mon',
+		   'hours': 'Closed ⋅ Opens 10AM Mon',
+		   'operating_hours': {'sunday': '10AM–9PM',
+		    'monday': '10AM–9PM',
+		    'tuesday': '10AM–9PM',
+		    'wednesday': '10AM–9PM',
+		    'thursday': '10AM–9PM',
+		    'friday': '10AM–9PM',
+		    'saturday': '10AM–9PM'},
+		   'phone': '+62 817-9514-447',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipMvAa6aEZpWdlSaB2Hi8BJZj4a5tXXDqM6GouiY=w163-h92-k-no'},
+		  {'position': 10,
+		   'title': 'Mie Ayam Joy',
+		   'place_id': 'ChIJs0JAglmLcC4RApxjiqKEw3o',
+		   'data_id': '0x2e708b59824042b3:0x7ac384a28a639c02',
+		   'data_cid': '8846059926727138306',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b59824042b3%3A0x7ac384a28a639c02&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b59824042b3%3A0x7ac384a28a639c02&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.988065799999999,
+		    'longitude': 110.4207328},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b59824042b3%3A0x7ac384a28a639c02%218m2%213d-6.988065799999999%214d110.4207328&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.6,
+		   'reviews': 104,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Pekunden Timur No.28, Pekunden, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50241, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 9AM Mon',
+		   'hours': 'Closed ⋅ Opens 9AM Mon',
+		   'operating_hours': {'sunday': 'Closed',
+		    'monday': '9AM–5:30PM',
+		    'tuesday': '9AM–5:30PM',
+		    'wednesday': '9AM–5:30PM',
+		    'thursday': '9AM–5:30PM',
+		    'friday': '9AM–5:30PM',
+		    'saturday': '9AM–5:30PM'},
+		   'phone': '+62 24 8318946',
+		   'service_options': {'dine_in': True,
+		    'takeout': True,
+		    'no_contact_delivery': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOBffGFCFnlJAD71uP1vwM079pwjEjay2zH--4=w80-h142-k-no'},
+		  {'position': 11,
+		   'title': 'Warung Mie Ayam dan Bakso 17 Spesial Bumbu Bali',
+		   'place_id': 'ChIJR2S200eLcC4RnBN1GAVJaQo',
+		   'data_id': '0x2e708b47d3b66447:0xa6949051875139c',
+		   'data_cid': '750211099167888284',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b47d3b66447%3A0xa6949051875139c&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b47d3b66447%3A0xa6949051875139c&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.986650099999999,
+		    'longitude': 110.405243},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b47d3b66447%3A0xa6949051875139c%218m2%213d-6.986650099999999%214d110.405243&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.3,
+		   'reviews': 209,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': '2C74+83Q, Jalan Suyudono, Bulustalan, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50245, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 10AM Mon',
+		   'hours': 'Closed ⋅ Opens 10AM Mon',
+		   'operating_hours': {'sunday': '10AM–10PM',
+		    'monday': '10AM–10PM',
+		    'tuesday': '10AM–10PM',
+		    'wednesday': '10AM–10PM',
+		    'thursday': '10AM–10PM',
+		    'friday': '10AM–10PM',
+		    'saturday': '10AM–10PM'},
+		   'phone': '+62 24 3569231',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipPxlQ2hbO_qoj8eLLsou30YbSZfrY4T2Yqm9ejq=w80-h106-k-no'},
+		  {'position': 12,
+		   'title': 'Mie Ayam Bu Catur Bergota',
+		   'place_id': 'ChIJYTAhnUOLcC4Rpm__kGESiBs',
+		   'data_id': '0x2e708b439d213061:0x1b88126190ff6fa6',
+		   'data_cid': '1983855846110490534',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b439d213061%3A0x1b88126190ff6fa6&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b439d213061%3A0x1b88126190ff6fa6&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.991713799999999,
+		    'longitude': 110.4112435},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b439d213061%3A0x1b88126190ff6fa6%218m2%213d-6.991713799999999%214d110.4112435&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.6,
+		   'reviews': 89,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Bergota Krajan No.536, Randusari, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50244, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 9AM Mon',
+		   'hours': 'Closed ⋅ Opens 9AM Mon',
+		   'operating_hours': {'sunday': '9AM–7PM',
+		    'monday': '9AM–7PM',
+		    'tuesday': '9AM–7PM',
+		    'wednesday': '9AM–7PM',
+		    'thursday': '9AM–7PM',
+		    'friday': '9AM–7PM',
+		    'saturday': '9AM–7PM'},
+		   'phone': '+62 821-3556-0060',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOZ4iQ9eBKNBYEPJ3OYPk4vukzonXneFCkRI7nx=w163-h92-k-no'},
+		  {'position': 13,
+		   'title': 'Mie Ayam & Bakso Mulyosari 2',
+		   'place_id': 'ChIJm5TaDA-LcC4ROPUBSJHT6Ak',
+		   'data_id': '0x2e708b0f0cda949b:0x9e8d3914801f538',
+		   'data_cid': '714053161870030136',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b0f0cda949b%3A0x9e8d3914801f538&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b0f0cda949b%3A0x9e8d3914801f538&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -7.0125002,
+		    'longitude': 110.39069099999999},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b0f0cda949b%3A0x9e8d3914801f538%218m2%213d-7.0125002%214d110.39069099999999&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.6,
+		   'reviews': 59,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Menoreh Raya No.79, Sampangan, Gajahmungkur, Semarang City, Central Java 50232, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 10AM Mon',
+		   'hours': 'Closed ⋅ Opens 10AM Mon',
+		   'operating_hours': {'sunday': '10AM–9PM',
+		    'monday': '10AM–9PM',
+		    'tuesday': '10AM–9PM',
+		    'wednesday': '10AM–9PM',
+		    'thursday': '10AM–9PM',
+		    'friday': '10AM–9PM',
+		    'saturday': '10AM–9PM'},
+		   'phone': '+62 813-1417-0705',
+		   'website': 'http://mieayambaksomulyosari2.business.site/',
+		   'service_options': {'dine_in': True, 'takeout': True, 'delivery': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipNJJJG2ruClApAFVGRzOyymznaEJ098Q6AxCa0L=w80-h106-k-no'},
+		  {'position': 14,
+		   'title': 'Mie Ayam & Bakso "MAJU JAYA" 354',
+		   'place_id': 'ChIJzXsj8myLcC4RURLOVFL8-ZI',
+		   'data_id': '0x2e708b6cf2237bcd:0x92f9fc5254ce1251',
+		   'data_cid': '10590773429278741073',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b6cf2237bcd%3A0x92f9fc5254ce1251&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b6cf2237bcd%3A0x92f9fc5254ce1251&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9927559, 'longitude': 110.4009729},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b6cf2237bcd%3A0x92f9fc5254ce1251%218m2%213d-6.9927559%214d110.4009729&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 5,
+		   'reviews': 5,
+		   'unclaimed_listing': True,
+		   'type': 'Restaurant',
+		   'address': 'Jl. Simongan No.29b, RW.04, Bojongsalaman, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50141, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 11AM Mon',
+		   'hours': 'Closed ⋅ Opens 11AM Mon',
+		   'operating_hours': {'sunday': '11AM–9PM',
+		    'monday': '11AM–9PM',
+		    'tuesday': '11AM–9PM',
+		    'wednesday': '11AM–9PM',
+		    'thursday': '11AM–9PM',
+		    'friday': 'Closed',
+		    'saturday': '11AM–9PM'},
+		   'phone': '+62 877-7357-6629',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipO3JfDTPgk_A3kHnz0Tjoz1d0j10LacvOTcb_Nm=w122-h92-k-no'},
+		  {'position': 15,
+		   'title': 'Bakso Kakap & Mie Ayam Pangsit',
+		   'place_id': 'ChIJQ1HyL4GLcC4RH-pk1tgfXR4',
+		   'data_id': '0x2e708b812ff25143:0x1e5d1fd8d664ea1f',
+		   'data_cid': '2187940010142263839',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b812ff25143%3A0x1e5d1fd8d664ea1f&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b812ff25143%3A0x1e5d1fd8d664ea1f&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9909672, 'longitude': 110.3888149},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b812ff25143%3A0x1e5d1fd8d664ea1f%218m2%213d-6.9909672%214d110.3888149&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.5,
+		   'reviews': 23,
+		   'type': 'Bakso restaurant',
+		   'address': '50149, Jl. Kumudasmoro Selatan No.1B, Gisikdrono, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50149, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 9AM Mon',
+		   'hours': 'Closed ⋅ Opens 9AM Mon',
+		   'operating_hours': {'sunday': '9AM–9:30PM',
+		    'monday': '9AM–9:30PM',
+		    'tuesday': '9AM–9:30PM',
+		    'wednesday': '9AM–9:30PM',
+		    'thursday': '9AM–9:30PM',
+		    'friday': '9AM–6PM',
+		    'saturday': '9AM–9:30PM'},
+		   'phone': '+62 896-9364-8602',
+		   'website': 'https://bakso-kakap-puchu-mie-ayam-pangsit.business.site/',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipPeDVtnr2u0ybkLWaS4RXlfvlzZ5gPzuJg4xfax=w80-h100-k-no'},
+		  {'position': 16,
+		   'title': 'warung bakso & mie ayam',
+		   'place_id': 'ChIJraq6k3qLcC4Rtw47mdVfDZE',
+		   'data_id': '0x2e708b7a93baaaad:0x910d5fd5993b0eb7',
+		   'data_cid': '10452115681200246455',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b7a93baaaad%3A0x910d5fd5993b0eb7&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b7a93baaaad%3A0x910d5fd5993b0eb7&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -7.0078628, 'longitude': 110.4155737},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b7a93baaaad%3A0x910d5fd5993b0eb7%218m2%213d-7.0078628%214d110.4155737&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 5,
+		   'reviews': 1,
+		   'unclaimed_listing': True,
+		   'type': 'Bakso restaurant',
+		   'address': 'XCR8+V64, Jl. Raung, Gajahmungkur, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50232, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 10AM Mon',
+		   'hours': 'Closed ⋅ Opens 10AM Mon',
+		   'operating_hours': {'sunday': '10AM–9:30PM',
+		    'monday': '10AM–9:30PM',
+		    'tuesday': '10AM–9:30PM',
+		    'wednesday': '10AM–9:30PM',
+		    'thursday': '10AM–9:30PM',
+		    'friday': '10AM–9:30PM',
+		    'saturday': '10AM–9:30PM'},
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipP21fJ-3U-mCyvZMgaRwyPgtPKHgioQDZgqE2g=w163-h92-k-no'},
+		  {'position': 17,
+		   'title': 'Mie Ayam Bakso Pak Yanto',
+		   'place_id': 'ChIJ1WEkixWLcC4RUJRcFaxyA0w',
+		   'data_id': '0x2e708b158b2461d5:0x4c0372ac155c9450',
+		   'data_cid': '5477347655230985296',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b158b2461d5%3A0x4c0372ac155c9450&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b158b2461d5%3A0x4c0372ac155c9450&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9971165, 'longitude': 110.3974884},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b158b2461d5%3A0x4c0372ac155c9450%218m2%213d-6.9971165%214d110.3974884&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.3,
+		   'reviews': 274,
+		   'price': '$',
+		   'type': 'Bakso restaurant',
+		   'address': 'Jl. Condrokusumo Raya No.6, Bongsari, Semarang Barat, Semarang City, Central Java 50148, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 11AM Mon',
+		   'hours': 'Closed ⋅ Opens 11AM Mon',
+		   'operating_hours': {'sunday': '11AM–10PM',
+		    'monday': '11AM–10PM',
+		    'tuesday': '11AM–10PM',
+		    'wednesday': '11AM–10PM',
+		    'thursday': '11AM–10PM',
+		    'friday': '11AM–10PM',
+		    'saturday': '11AM–10PM'},
+		   'phone': '+62 821-3358-8549',
+		   'website': 'https://mie-ayam-bakso-pak-yanto.business.site/',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipO2JDkf_9XBtvYJDJ1IAjoy8wK2s4rwpWRZyyaO=w80-h142-k-no'},
+		  {'position': 18,
+		   'title': 'Mie Ayam Pak Min',
+		   'place_id': 'ChIJD6FbAVyLcC4RGNvP7jYGuYs',
+		   'data_id': '0x2e708b5c015ba10f:0x8bb90636eecfdb18',
+		   'data_cid': '10068085274968054552',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b5c015ba10f%3A0x8bb90636eecfdb18&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b5c015ba10f%3A0x8bb90636eecfdb18&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9893459,
+		    'longitude': 110.41990489999999},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b5c015ba10f%3A0x8bb90636eecfdb18%218m2%213d-6.9893459%214d110.41990489999999&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.5,
+		   'reviews': 1131,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Pandanaran No.2, Mugassari, Semarang Selatan, Semarang City, Central Java 50249, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 11AM Mon',
+		   'hours': 'Closed ⋅ Opens 11AM Mon',
+		   'operating_hours': {'sunday': '11AM–5PM',
+		    'monday': '11AM–5PM',
+		    'tuesday': '11AM–5PM',
+		    'wednesday': '11AM–5PM',
+		    'thursday': '11AM–5PM',
+		    'friday': '11AM–5PM',
+		    'saturday': '11AM–5PM'},
+		   'phone': '+62 813-2651-5220',
+		   'service_options': {'dine_in': True,
+		    'takeout': True,
+		    'no_contact_delivery': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOkPRHvMadyhkb0kCZ0i5nt2-oTv6W-jOfu93Yl=w122-h92-k-no'},
+		  {'position': 19,
+		   'title': 'Mie Ayam Argopuro',
+		   'place_id': 'ChIJQ8IbkG-LcC4RJVnHYkEiHMg',
+		   'data_id': '0x2e708b6f901bc243:0xc81c224162c75925',
+		   'data_cid': '14419437771158935845',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b6f901bc243%3A0xc81c224162c75925&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b6f901bc243%3A0xc81c224162c75925&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -7.0043441, 'longitude': 110.4140201},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b6f901bc243%3A0xc81c224162c75925%218m2%213d-7.0043441%214d110.4140201&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.4,
+		   'reviews': 88,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Argopuro No.24, Lempongsari, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50231, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 10AM Mon',
+		   'hours': 'Closed ⋅ Opens 10AM Mon',
+		   'operating_hours': {'sunday': '10AM–6PM',
+		    'monday': '10AM–6PM',
+		    'tuesday': '10AM–6PM',
+		    'wednesday': '10AM–6PM',
+		    'thursday': '10AM–6PM',
+		    'friday': '10AM–6PM',
+		    'saturday': '10AM–6PM'},
+		   'phone': '+62 899-8300-215',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOGgSdyYTmkDHwg4KjkFbQqal5J9aHSgUviViHr=w163-h92-k-no'},
+		  {'position': 20,
+		   'title': 'Mie Ayam Bakso Sri Sumarni',
+		   'place_id': 'ChIJW5nS72eLcC4RhMMiZNfKZiU',
+		   'data_id': '0x2e708b67efd2995b:0x2566cad76422c384',
+		   'data_cid': '2695064453474599812',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b67efd2995b%3A0x2566cad76422c384&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b67efd2995b%3A0x2566cad76422c384&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -7.013534099999999,
+		    'longitude': 110.3949988},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b67efd2995b%3A0x2566cad76422c384%218m2%213d-7.013534099999999%214d110.3949988&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.9,
+		   'reviews': 23,
+		   'type': 'Restaurant',
+		   'address': 'Stiepari Kampus Pascasarjana, Jl. Lamongan Raya, Sampangan, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50232, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 11AM Mon',
+		   'hours': 'Closed ⋅ Opens 11AM Mon',
+		   'operating_hours': {'sunday': '11AM–8PM',
+		    'monday': '11AM–8PM',
+		    'tuesday': '11AM–8PM',
+		    'wednesday': '11AM–8PM',
+		    'thursday': '11AM–8PM',
+		    'friday': '11AM–8PM',
+		    'saturday': '11AM–8PM'},
+		   'phone': '+62 857-4201-2821',
+		   'service_options': {'dine_in': True, 'takeout': True, 'delivery': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOXl7uz-SQpnJO9PnYLz6P6R_gYJ8RyaqPqF3zt=w92-h92-k-no'}],
+		 'serpapi_pagination': {'next': 'https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&ll=%40-6.9978354%2C110.4072681%2C15z&q=mie+ayam&start=20&type=search'}}
+
+Code cell <2GyJ8pSRXmUd>
+#%% [code]
+for i in range(10):
+  rating = results ["reviews"][i]["rating"]
+  print(rating)
+  reviews = results ["reviews"][i]["snippet"]
+  print(reviews)
+
+Code cell <_pcPcp4KYbZW>
+#%% [code]
+#2
+from serpapi import GoogleSearch
+
+params = {
+  "engine": "google_maps_reviews",
+  "data_id": "0x2e708b6e0f3c7a6b:0xc2bf258c78bbe9e",
+  "api_key": "7dfc31a930d42a121191611e0a3617a7a8ada1e3fdaee846bce20f8e64576826"
+}
+
+search = GoogleSearch(params)
+results = search.get_dict()
+reviews = results["reviews"]
+
+Code cell <arDWkinAYjY8>
+#%% [code]
+results
+
+Code cell <S-kU0E_5Y4-f>
+#%% [code]
+for i in range(10):
+  rating = results ["reviews"][i]["rating"]
+  print(rating)
+  reviews = results ["reviews"][i]["snippet"]
+  print(reviews)
+
+Code cell <8rSwsh6IY83g>
+#%% [code]
+#3
+from serpapi import GoogleSearch
+
+params = {
+  "engine": "google_maps_reviews",
+  "data_id": "0x2e708b6053d0c753:0xe6c527d04999ccbe",
+  "api_key": "7dfc31a930d42a121191611e0a3617a7a8ada1e3fdaee846bce20f8e64576826"
+}
+
+search = GoogleSearch(params)
+results = search.get_dict()
+reviews = results["reviews"]
+
+Code cell <9SKKR320ZPhM>
+#%% [code]
+results
+
+Code cell <cWiHDsmaZR5U>
+#%% [code]
+for i in range(10):
+  rating = results ["reviews"][i]["rating"]
+  print(rating)
+  reviews = results ["reviews"][i]["snippet"]
+  print(reviews)
+
+Code cell <8cLO_b-QZVQ9>
+#%% [code]
+#4
+from serpapi import GoogleSearch
+
+params = {
+  "engine": "google_maps_reviews",
+  "data_id": "0x2e708b5c015ba10f:0x8bb90636eecfdb18",
+  "api_key": "7dfc31a930d42a121191611e0a3617a7a8ada1e3fdaee846bce20f8e64576826"
+}
+
+search = GoogleSearch(params)
+results = search.get_dict()
+reviews = results["reviews"]
+
+Code cell <K4KpaAPTZret>
+#%% [code]
+results
+
+Code cell <OTyF3n8WZtaj>
+#%% [code]
+for i in range(10):
+  rating = results ["reviews"][i]["rating"]
+  print(rating)
+  reviews = results ["reviews"][i]["snippet"]
+  print(reviews)
+
+Code cell <ps8xVziiZ3Mv>
+#%% [code]
+#5
+from serpapi import GoogleSearch
+
+params = {
+  "engine": "google_maps_reviews",
+  "data_id": "0x2e708b6f901bc243:0xc81c224162c75925",
+  "api_key": "7dfc31a930d42a121191611e0a3617a7a8ada1e3fdaee846bce20f8e64576826"
+}
+
+search = GoogleSearch(params)
+results = search.get_dict()
+reviews = results["reviews"]
+
+Code cell <ASWXMbDpaOBz>
+#%% [code]
+results
+
+Code cell <txe-BWXYaQAf>
+#%% [code]
+for i in range(10):
+  rating = results ["reviews"][i]["rating"]
+  print(rating)
+  reviews = results ["reviews"][i]["snippet"]
+  print(reviews)
+
+Code cell <lYZLa5qcaWqG>
+#%% [code]
+#5
+from serpapi import GoogleSearch
+
+params = {
+  "engine": "google_maps_reviews",
+  "data_id": "0x2e708b6f901bc243:0xc81c224162c75925",
+  "api_key": "7dfc31a930d42a121191611e0a3617a7a8ada1e3fdaee846bce20f8e64576826"
+}
+
+search = GoogleSearch(params)
+results = search.get_dict()
+reviews = results["reviews"]
+
+Code cell <6rq2LWNKakz_>
+#%% [code]
+results
+Execution output from Oct 9, 2022 10:44 PM
+32KB
+	text/plain
+		{'search_metadata': {'id': '6342e748e13508f1c25a5b31',
+		  'status': 'Success',
+		  'json_endpoint': 'https://serpapi.com/searches/0b8e660a3c8c66bf/6342e748e13508f1c25a5b31.json',
+		  'created_at': '2022-10-09 15:22:48 UTC',
+		  'processed_at': '2022-10-09 15:22:48 UTC',
+		  'google_maps_url': 'https://www.google.com/maps/search/@-6.9978354,110.4072681,15z/mie+ayam?hl=en',
+		  'raw_html_file': 'https://serpapi.com/searches/f341e357058c263b/6342e748e13508f1c25a5b31.html',
+		  'total_time_taken': 1.24},
+		 'search_parameters': {'engine': 'google_maps',
+		  'type': 'search',
+		  'q': 'mie ayam',
+		  'll': '@-6.9978354,110.4072681,15z',
+		  'google_domain': 'google.com',
+		  'hl': 'en'},
+		 'search_information': {'local_results_state': 'Results for exact spelling',
+		  'query_displayed': 'mie ayam'},
+		 'local_results': [{'position': 1,
+		   'title': 'Mie Ayam Pak Djo Sari Roso',
+		   'place_id': 'ChIJFZIPHlCLcC4RQauHiUeZFV8',
+		   'data_id': '0x2e708b501e0f9215:0x5f1599478987ab41',
+		   'data_cid': '6851550940643175233',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b501e0f9215%3A0x5f1599478987ab41&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b501e0f9215%3A0x5f1599478987ab41&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9849083, 'longitude': 110.4143421},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b501e0f9215%3A0x5f1599478987ab41%218m2%213d-6.9849083%214d110.4143421&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.5,
+		   'reviews': 265,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': '2C87+2PP, Jl. Pekunden Barat, Miroto, Semarang Tengah, Semarang City, Central Java 50134, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 12:30PM Mon',
+		   'hours': 'Closed ⋅ Opens 12:30PM Mon',
+		   'operating_hours': {'sunday': 'Closed',
+		    'monday': '12:30–4PM',
+		    'tuesday': '12:30–4PM',
+		    'wednesday': '12:30–4PM',
+		    'thursday': '12:30–4PM',
+		    'friday': 'Closed',
+		    'saturday': '12:30–4PM'},
+		   'phone': '+62 838-3804-0661',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOz3QEuTlEVh6gyQ19tdhQBrzBCWaojQ78LimZ1=w122-h92-k-no'},
+		  {'position': 2,
+		   'title': 'Bakso & Mie ayam Taman Gajah Mungkur Semarang',
+		   'place_id': 'ChIJa3o8D26LcC4Rnr6Lx1jyKww',
+		   'data_id': '0x2e708b6e0f3c7a6b:0xc2bf258c78bbe9e',
+		   'data_cid': '877061015572561566',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b6e0f3c7a6b%3A0xc2bf258c78bbe9e&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b6e0f3c7a6b%3A0xc2bf258c78bbe9e&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -7.0055388, 'longitude': 110.4087084},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b6e0f3c7a6b%3A0xc2bf258c78bbe9e%218m2%213d-7.0055388%214d110.4087084&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.4,
+		   'reviews': 479,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': 'XCV5+QFP, Gajahmungkur, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50232, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 9:30AM Mon',
+		   'hours': 'Closed ⋅ Opens 9:30AM Mon',
+		   'operating_hours': {'sunday': '9:30AM–2:30PM',
+		    'monday': '9:30AM–2:30PM',
+		    'tuesday': '9:30AM–2:30PM',
+		    'wednesday': '9:30AM–2:30PM',
+		    'thursday': '9:30AM–2:30PM',
+		    'friday': '9:30AM–2:30PM',
+		    'saturday': '9:30AM–2:30PM'},
+		   'phone': '+62 813-9042-5667',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOjy_HMn3hOI5PA_OFHEuRdQGXRXwEr6Pl8Ag4F=w80-h92-k-no'},
+		  {'position': 3,
+		   'title': 'Mie Ayam Ceker Sido Mampir',
+		   'place_id': 'ChIJU8fQU2CLcC4RvsyZSdAnxeY',
+		   'data_id': '0x2e708b6053d0c753:0xe6c527d04999ccbe',
+		   'data_cid': '16628740974676921534',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b6053d0c753%3A0xe6c527d04999ccbe&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b6053d0c753%3A0xe6c527d04999ccbe&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9978782, 'longitude': 110.4237476},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b6053d0c753%3A0xe6c527d04999ccbe%218m2%213d-6.9978782%214d110.4237476&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.6,
+		   'reviews': 249,
+		   'price': '$',
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': '2C2F+RFX, Pleburan, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50241, Indonesia',
+		   'open_state': 'Open ⋅ Closes 12AM',
+		   'hours': 'Open ⋅ Closes 12AM',
+		   'operating_hours': {'sunday': '4PM–12AM',
+		    'monday': '4PM–12AM',
+		    'tuesday': '4PM–12AM',
+		    'wednesday': '4PM–12AM',
+		    'thursday': '4PM–12AM',
+		    'friday': '4PM–12AM',
+		    'saturday': '4PM–12AM'},
+		   'service_options': {'dine_in': True, 'takeout': True, 'delivery': False},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipPEgyfws5X0yv4qXfT3VSHdjEFws8OhOqEbZxfm=w80-h106-k-no'},
+		  {'position': 4,
+		   'title': 'Mie Ayam & Bakso Sultan',
+		   'place_id': 'ChIJ2enN_WGLcC4R0to5gko2Blc',
+		   'data_id': '0x2e708b61fdcde9d9:0x5706364a8239dad2',
+		   'data_cid': '6270759224800303826',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b61fdcde9d9%3A0x5706364a8239dad2&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b61fdcde9d9%3A0x5706364a8239dad2&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -7.0001644,
+		    'longitude': 110.42506689999999},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b61fdcde9d9%3A0x5706364a8239dad2%218m2%213d-7.0001644%214d110.42506689999999&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.5,
+		   'reviews': 217,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Pleburan VIII No.12, Pleburan, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50242, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 11AM Mon',
+		   'hours': 'Closed ⋅ Opens 11AM Mon',
+		   'operating_hours': {'sunday': 'Closed',
+		    'monday': '11AM–9PM',
+		    'tuesday': '11AM–9PM',
+		    'wednesday': '11AM–9PM',
+		    'thursday': '11AM–9PM',
+		    'friday': '1–9PM',
+		    'saturday': '11AM–9PM'},
+		   'phone': '+62 817-422-111',
+		   'service_options': {'dine_in': True,
+		    'drive_through': True,
+		    'no_contact_delivery': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipMiQdkOMBEfUL_NADjYdqV0Eu9ezf_YfV3pzqJI=w80-h106-k-no'},
+		  {'position': 5,
+		   'title': 'Mie Ayam Jakarta 888',
+		   'place_id': 'ChIJweRTQBOLcC4RhHpk6JuLNoE',
+		   'data_id': '0x2e708b134053e4c1:0x81368b9be8647a84',
+		   'data_cid': '9310782781370169988',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b134053e4c1%3A0x81368b9be8647a84&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b134053e4c1%3A0x81368b9be8647a84&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -7.002864499999999,
+		    'longitude': 110.4010461},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b134053e4c1%3A0x81368b9be8647a84%218m2%213d-7.002864499999999%214d110.4010461&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.1,
+		   'reviews': 7,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': 'XCW2+VC3, Jl. Taman Kelud, Petompon, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50237, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 8AM Mon',
+		   'hours': 'Closed ⋅ Opens 8AM Mon',
+		   'operating_hours': {'sunday': 'Closed',
+		    'monday': '8AM–8PM',
+		    'tuesday': '8AM–8PM',
+		    'wednesday': '8AM–8PM',
+		    'thursday': '8AM–8PM',
+		    'friday': '8AM–8PM',
+		    'saturday': '8AM–8PM'},
+		   'phone': '+62 816-697-323',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOMnaRNlIno1QTaCgTfAMXKhRdjHLJ8Y-som6Wh=w163-h92-k-no'},
+		  {'position': 6,
+		   'title': 'Bakso & Mie Ayam Adi Roso',
+		   'place_id': 'ChIJocU-RQ6LcC4R7RUUTLW6ez0',
+		   'data_id': '0x2e708b0e453ec5a1:0x3d7bbab54c1415ed',
+		   'data_cid': '4430339946277246445',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b0e453ec5a1%3A0x3d7bbab54c1415ed&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b0e453ec5a1%3A0x3d7bbab54c1415ed&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -7.0089672, 'longitude': 110.3943675},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b0e453ec5a1%3A0x3d7bbab54c1415ed%218m2%213d-7.0089672%214d110.3943675&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.2,
+		   'reviews': 327,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Menoreh Raya No.9, Sampangan, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50232, Indonesia',
+		   'open_state': 'Closes soon ⋅ 11PM ⋅ Opens 10AM Mon',
+		   'hours': 'Closes soon ⋅ 11PM ⋅ Opens 10AM Mon',
+		   'operating_hours': {'sunday': '10AM–11PM',
+		    'monday': '10AM–11PM',
+		    'tuesday': '10AM–11PM',
+		    'wednesday': '10AM–11PM',
+		    'thursday': '10AM–11PM',
+		    'friday': '10AM–11PM',
+		    'saturday': '10AM–11PM'},
+		   'phone': '+62 812-2749-5545',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipM_20EFufrhnbeX5iDdCh1vDmP4s9ivoRlO0W2a=w80-h106-k-no'},
+		  {'position': 7,
+		   'title': 'Mie Kangtaw',
+		   'place_id': 'ChIJ-VTtJKGLcC4RqWpWVh853EE',
+		   'data_id': '0x2e708ba124ed54f9:0x41dc391f56566aa9',
+		   'data_cid': '4745730914096933545',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708ba124ed54f9%3A0x41dc391f56566aa9&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708ba124ed54f9%3A0x41dc391f56566aa9&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9870801, 'longitude': 110.3949308},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708ba124ed54f9%3A0x41dc391f56566aa9%218m2%213d-6.9870801%214d110.3949308&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.6,
+		   'reviews': 11,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Puspowarno IX No.4, Salamanmloyo, Semarang Barat, Semarang City, Central Java 50143, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 9AM Mon',
+		   'hours': 'Closed ⋅ Opens 9AM Mon',
+		   'operating_hours': {'sunday': 'Closed',
+		    'monday': '9AM–9PM',
+		    'tuesday': '9AM–9PM',
+		    'wednesday': '9AM–9PM',
+		    'thursday': '9AM–9PM',
+		    'friday': '9AM–9PM',
+		    'saturday': '9AM–9PM'},
+		   'phone': '+62 813-9074-7667',
+		   'service_options': {'dine_in': True, 'takeout': True, 'delivery': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipPktAdIYKdpSOZtzbQ-LDa_ge7oKvqUvw0Zu3ib=w80-h106-k-no'},
+		  {'position': 8,
+		   'title': 'Mie Ayam Jamur Pleburan',
+		   'place_id': 'ChIJudF-E2CLcC4RJV_yOWRG08w',
+		   'data_id': '0x2e708b60137ed1b9:0xccd3466439f25f25',
+		   'data_cid': '14759217800106106661',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b60137ed1b9%3A0xccd3466439f25f25&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b60137ed1b9%3A0xccd3466439f25f25&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9965313,
+		    'longitude': 110.42485269999999},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b60137ed1b9%3A0xccd3466439f25f25%218m2%213d-6.9965313%214d110.42485269999999&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.1,
+		   'reviews': 28,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Pleburan Barat No.33, Pleburan, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50241, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 10AM Mon',
+		   'hours': 'Closed ⋅ Opens 10AM Mon',
+		   'operating_hours': {'sunday': '10AM–8:30PM',
+		    'monday': '10AM–8:30PM',
+		    'tuesday': '10AM–8:30PM',
+		    'wednesday': '10AM–8:30PM',
+		    'thursday': '10AM–8:30PM',
+		    'friday': '10AM–8:30PM',
+		    'saturday': '10AM–8:30PM'},
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOkBbgKy_FDFYSIpbDWfNhkPoXp8cvnFaGG88Qi=w92-h92-k-no'},
+		  {'position': 9,
+		   'title': 'MIE AYAM PAK MIN',
+		   'place_id': 'ChIJeZwNHuyLcC4Rv4csB6CueJg',
+		   'data_id': '0x2e708bec1e0d9c79:0x9878aea0072c87bf',
+		   'data_cid': '10986723293308684223',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708bec1e0d9c79%3A0x9878aea0072c87bf&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708bec1e0d9c79%3A0x9878aea0072c87bf&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9902158, 'longitude': 110.4241685},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708bec1e0d9c79%3A0x9878aea0072c87bf%218m2%213d-6.9902158%214d110.4241685&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 5,
+		   'reviews': 1,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Simpang Lima No.101, Karangkidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50241, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 10AM Mon',
+		   'hours': 'Closed ⋅ Opens 10AM Mon',
+		   'operating_hours': {'sunday': '10AM–9PM',
+		    'monday': '10AM–9PM',
+		    'tuesday': '10AM–9PM',
+		    'wednesday': '10AM–9PM',
+		    'thursday': '10AM–9PM',
+		    'friday': '10AM–9PM',
+		    'saturday': '10AM–9PM'},
+		   'phone': '+62 817-9514-447',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipMvAa6aEZpWdlSaB2Hi8BJZj4a5tXXDqM6GouiY=w163-h92-k-no'},
+		  {'position': 10,
+		   'title': 'Mie Ayam Joy',
+		   'place_id': 'ChIJs0JAglmLcC4RApxjiqKEw3o',
+		   'data_id': '0x2e708b59824042b3:0x7ac384a28a639c02',
+		   'data_cid': '8846059926727138306',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b59824042b3%3A0x7ac384a28a639c02&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b59824042b3%3A0x7ac384a28a639c02&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.988065799999999,
+		    'longitude': 110.4207328},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b59824042b3%3A0x7ac384a28a639c02%218m2%213d-6.988065799999999%214d110.4207328&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.6,
+		   'reviews': 104,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Pekunden Timur No.28, Pekunden, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50241, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 9AM Mon',
+		   'hours': 'Closed ⋅ Opens 9AM Mon',
+		   'operating_hours': {'sunday': 'Closed',
+		    'monday': '9AM–5:30PM',
+		    'tuesday': '9AM–5:30PM',
+		    'wednesday': '9AM–5:30PM',
+		    'thursday': '9AM–5:30PM',
+		    'friday': '9AM–5:30PM',
+		    'saturday': '9AM–5:30PM'},
+		   'phone': '+62 24 8318946',
+		   'service_options': {'dine_in': True,
+		    'takeout': True,
+		    'no_contact_delivery': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOBffGFCFnlJAD71uP1vwM079pwjEjay2zH--4=w80-h142-k-no'},
+		  {'position': 11,
+		   'title': 'Warung Mie Ayam dan Bakso 17 Spesial Bumbu Bali',
+		   'place_id': 'ChIJR2S200eLcC4RnBN1GAVJaQo',
+		   'data_id': '0x2e708b47d3b66447:0xa6949051875139c',
+		   'data_cid': '750211099167888284',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b47d3b66447%3A0xa6949051875139c&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b47d3b66447%3A0xa6949051875139c&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.986650099999999,
+		    'longitude': 110.405243},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b47d3b66447%3A0xa6949051875139c%218m2%213d-6.986650099999999%214d110.405243&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.3,
+		   'reviews': 209,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': '2C74+83Q, Jalan Suyudono, Bulustalan, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50245, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 10AM Mon',
+		   'hours': 'Closed ⋅ Opens 10AM Mon',
+		   'operating_hours': {'sunday': '10AM–10PM',
+		    'monday': '10AM–10PM',
+		    'tuesday': '10AM–10PM',
+		    'wednesday': '10AM–10PM',
+		    'thursday': '10AM–10PM',
+		    'friday': '10AM–10PM',
+		    'saturday': '10AM–10PM'},
+		   'phone': '+62 24 3569231',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipPxlQ2hbO_qoj8eLLsou30YbSZfrY4T2Yqm9ejq=w80-h106-k-no'},
+		  {'position': 12,
+		   'title': 'Mie Ayam Bu Catur Bergota',
+		   'place_id': 'ChIJYTAhnUOLcC4Rpm__kGESiBs',
+		   'data_id': '0x2e708b439d213061:0x1b88126190ff6fa6',
+		   'data_cid': '1983855846110490534',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b439d213061%3A0x1b88126190ff6fa6&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b439d213061%3A0x1b88126190ff6fa6&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.991713799999999,
+		    'longitude': 110.4112435},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b439d213061%3A0x1b88126190ff6fa6%218m2%213d-6.991713799999999%214d110.4112435&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.6,
+		   'reviews': 89,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Bergota Krajan No.536, Randusari, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50244, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 9AM Mon',
+		   'hours': 'Closed ⋅ Opens 9AM Mon',
+		   'operating_hours': {'sunday': '9AM–7PM',
+		    'monday': '9AM–7PM',
+		    'tuesday': '9AM–7PM',
+		    'wednesday': '9AM–7PM',
+		    'thursday': '9AM–7PM',
+		    'friday': '9AM–7PM',
+		    'saturday': '9AM–7PM'},
+		   'phone': '+62 821-3556-0060',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOZ4iQ9eBKNBYEPJ3OYPk4vukzonXneFCkRI7nx=w163-h92-k-no'},
+		  {'position': 13,
+		   'title': 'Mie Ayam & Bakso Mulyosari 2',
+		   'place_id': 'ChIJm5TaDA-LcC4ROPUBSJHT6Ak',
+		   'data_id': '0x2e708b0f0cda949b:0x9e8d3914801f538',
+		   'data_cid': '714053161870030136',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b0f0cda949b%3A0x9e8d3914801f538&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b0f0cda949b%3A0x9e8d3914801f538&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -7.0125002,
+		    'longitude': 110.39069099999999},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b0f0cda949b%3A0x9e8d3914801f538%218m2%213d-7.0125002%214d110.39069099999999&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.6,
+		   'reviews': 59,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Menoreh Raya No.79, Sampangan, Gajahmungkur, Semarang City, Central Java 50232, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 10AM Mon',
+		   'hours': 'Closed ⋅ Opens 10AM Mon',
+		   'operating_hours': {'sunday': '10AM–9PM',
+		    'monday': '10AM–9PM',
+		    'tuesday': '10AM–9PM',
+		    'wednesday': '10AM–9PM',
+		    'thursday': '10AM–9PM',
+		    'friday': '10AM–9PM',
+		    'saturday': '10AM–9PM'},
+		   'phone': '+62 813-1417-0705',
+		   'website': 'http://mieayambaksomulyosari2.business.site/',
+		   'service_options': {'dine_in': True, 'takeout': True, 'delivery': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipNJJJG2ruClApAFVGRzOyymznaEJ098Q6AxCa0L=w80-h106-k-no'},
+		  {'position': 14,
+		   'title': 'Mie Ayam & Bakso "MAJU JAYA" 354',
+		   'place_id': 'ChIJzXsj8myLcC4RURLOVFL8-ZI',
+		   'data_id': '0x2e708b6cf2237bcd:0x92f9fc5254ce1251',
+		   'data_cid': '10590773429278741073',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b6cf2237bcd%3A0x92f9fc5254ce1251&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b6cf2237bcd%3A0x92f9fc5254ce1251&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9927559, 'longitude': 110.4009729},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b6cf2237bcd%3A0x92f9fc5254ce1251%218m2%213d-6.9927559%214d110.4009729&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 5,
+		   'reviews': 5,
+		   'unclaimed_listing': True,
+		   'type': 'Restaurant',
+		   'address': 'Jl. Simongan No.29b, RW.04, Bojongsalaman, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50141, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 11AM Mon',
+		   'hours': 'Closed ⋅ Opens 11AM Mon',
+		   'operating_hours': {'sunday': '11AM–9PM',
+		    'monday': '11AM–9PM',
+		    'tuesday': '11AM–9PM',
+		    'wednesday': '11AM–9PM',
+		    'thursday': '11AM–9PM',
+		    'friday': 'Closed',
+		    'saturday': '11AM–9PM'},
+		   'phone': '+62 877-7357-6629',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipO3JfDTPgk_A3kHnz0Tjoz1d0j10LacvOTcb_Nm=w122-h92-k-no'},
+		  {'position': 15,
+		   'title': 'Bakso Kakap & Mie Ayam Pangsit',
+		   'place_id': 'ChIJQ1HyL4GLcC4RH-pk1tgfXR4',
+		   'data_id': '0x2e708b812ff25143:0x1e5d1fd8d664ea1f',
+		   'data_cid': '2187940010142263839',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b812ff25143%3A0x1e5d1fd8d664ea1f&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b812ff25143%3A0x1e5d1fd8d664ea1f&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9909672, 'longitude': 110.3888149},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b812ff25143%3A0x1e5d1fd8d664ea1f%218m2%213d-6.9909672%214d110.3888149&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.5,
+		   'reviews': 23,
+		   'type': 'Bakso restaurant',
+		   'address': '50149, Jl. Kumudasmoro Selatan No.1B, Gisikdrono, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50149, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 9AM Mon',
+		   'hours': 'Closed ⋅ Opens 9AM Mon',
+		   'operating_hours': {'sunday': '9AM–9:30PM',
+		    'monday': '9AM–9:30PM',
+		    'tuesday': '9AM–9:30PM',
+		    'wednesday': '9AM–9:30PM',
+		    'thursday': '9AM–9:30PM',
+		    'friday': '9AM–6PM',
+		    'saturday': '9AM–9:30PM'},
+		   'phone': '+62 896-9364-8602',
+		   'website': 'https://bakso-kakap-puchu-mie-ayam-pangsit.business.site/',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipPeDVtnr2u0ybkLWaS4RXlfvlzZ5gPzuJg4xfax=w80-h100-k-no'},
+		  {'position': 16,
+		   'title': 'warung bakso & mie ayam',
+		   'place_id': 'ChIJraq6k3qLcC4Rtw47mdVfDZE',
+		   'data_id': '0x2e708b7a93baaaad:0x910d5fd5993b0eb7',
+		   'data_cid': '10452115681200246455',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b7a93baaaad%3A0x910d5fd5993b0eb7&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b7a93baaaad%3A0x910d5fd5993b0eb7&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -7.0078628, 'longitude': 110.4155737},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b7a93baaaad%3A0x910d5fd5993b0eb7%218m2%213d-7.0078628%214d110.4155737&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 5,
+		   'reviews': 1,
+		   'unclaimed_listing': True,
+		   'type': 'Bakso restaurant',
+		   'address': 'XCR8+V64, Jl. Raung, Gajahmungkur, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50232, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 10AM Mon',
+		   'hours': 'Closed ⋅ Opens 10AM Mon',
+		   'operating_hours': {'sunday': '10AM–9:30PM',
+		    'monday': '10AM–9:30PM',
+		    'tuesday': '10AM–9:30PM',
+		    'wednesday': '10AM–9:30PM',
+		    'thursday': '10AM–9:30PM',
+		    'friday': '10AM–9:30PM',
+		    'saturday': '10AM–9:30PM'},
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipP21fJ-3U-mCyvZMgaRwyPgtPKHgioQDZgqE2g=w163-h92-k-no'},
+		  {'position': 17,
+		   'title': 'Mie Ayam Bakso Pak Yanto',
+		   'place_id': 'ChIJ1WEkixWLcC4RUJRcFaxyA0w',
+		   'data_id': '0x2e708b158b2461d5:0x4c0372ac155c9450',
+		   'data_cid': '5477347655230985296',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b158b2461d5%3A0x4c0372ac155c9450&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b158b2461d5%3A0x4c0372ac155c9450&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9971165, 'longitude': 110.3974884},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b158b2461d5%3A0x4c0372ac155c9450%218m2%213d-6.9971165%214d110.3974884&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.3,
+		   'reviews': 274,
+		   'price': '$',
+		   'type': 'Bakso restaurant',
+		   'address': 'Jl. Condrokusumo Raya No.6, Bongsari, Semarang Barat, Semarang City, Central Java 50148, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 11AM Mon',
+		   'hours': 'Closed ⋅ Opens 11AM Mon',
+		   'operating_hours': {'sunday': '11AM–10PM',
+		    'monday': '11AM–10PM',
+		    'tuesday': '11AM–10PM',
+		    'wednesday': '11AM–10PM',
+		    'thursday': '11AM–10PM',
+		    'friday': '11AM–10PM',
+		    'saturday': '11AM–10PM'},
+		   'phone': '+62 821-3358-8549',
+		   'website': 'https://mie-ayam-bakso-pak-yanto.business.site/',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipO2JDkf_9XBtvYJDJ1IAjoy8wK2s4rwpWRZyyaO=w80-h142-k-no'},
+		  {'position': 18,
+		   'title': 'Mie Ayam Pak Min',
+		   'place_id': 'ChIJD6FbAVyLcC4RGNvP7jYGuYs',
+		   'data_id': '0x2e708b5c015ba10f:0x8bb90636eecfdb18',
+		   'data_cid': '10068085274968054552',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b5c015ba10f%3A0x8bb90636eecfdb18&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b5c015ba10f%3A0x8bb90636eecfdb18&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -6.9893459,
+		    'longitude': 110.41990489999999},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b5c015ba10f%3A0x8bb90636eecfdb18%218m2%213d-6.9893459%214d110.41990489999999&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.5,
+		   'reviews': 1131,
+		   'unclaimed_listing': True,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Pandanaran No.2, Mugassari, Semarang Selatan, Semarang City, Central Java 50249, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 11AM Mon',
+		   'hours': 'Closed ⋅ Opens 11AM Mon',
+		   'operating_hours': {'sunday': '11AM–5PM',
+		    'monday': '11AM–5PM',
+		    'tuesday': '11AM–5PM',
+		    'wednesday': '11AM–5PM',
+		    'thursday': '11AM–5PM',
+		    'friday': '11AM–5PM',
+		    'saturday': '11AM–5PM'},
+		   'phone': '+62 813-2651-5220',
+		   'service_options': {'dine_in': True,
+		    'takeout': True,
+		    'no_contact_delivery': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOkPRHvMadyhkb0kCZ0i5nt2-oTv6W-jOfu93Yl=w122-h92-k-no'},
+		  {'position': 19,
+		   'title': 'Mie Ayam Argopuro',
+		   'place_id': 'ChIJQ8IbkG-LcC4RJVnHYkEiHMg',
+		   'data_id': '0x2e708b6f901bc243:0xc81c224162c75925',
+		   'data_cid': '14419437771158935845',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b6f901bc243%3A0xc81c224162c75925&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b6f901bc243%3A0xc81c224162c75925&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -7.0043441, 'longitude': 110.4140201},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b6f901bc243%3A0xc81c224162c75925%218m2%213d-7.0043441%214d110.4140201&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.4,
+		   'reviews': 88,
+		   'type': 'Noodle shop',
+		   'address': 'Jl. Argopuro No.24, Lempongsari, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50231, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 10AM Mon',
+		   'hours': 'Closed ⋅ Opens 10AM Mon',
+		   'operating_hours': {'sunday': '10AM–6PM',
+		    'monday': '10AM–6PM',
+		    'tuesday': '10AM–6PM',
+		    'wednesday': '10AM–6PM',
+		    'thursday': '10AM–6PM',
+		    'friday': '10AM–6PM',
+		    'saturday': '10AM–6PM'},
+		   'phone': '+62 899-8300-215',
+		   'service_options': {'dine_in': True, 'takeout': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOGgSdyYTmkDHwg4KjkFbQqal5J9aHSgUviViHr=w163-h92-k-no'},
+		  {'position': 20,
+		   'title': 'Mie Ayam Bakso Sri Sumarni',
+		   'place_id': 'ChIJW5nS72eLcC4RhMMiZNfKZiU',
+		   'data_id': '0x2e708b67efd2995b:0x2566cad76422c384',
+		   'data_cid': '2695064453474599812',
+		   'reviews_link': 'https://serpapi.com/search.json?data_id=0x2e708b67efd2995b%3A0x2566cad76422c384&engine=google_maps_reviews&hl=en',
+		   'photos_link': 'https://serpapi.com/search.json?data_id=0x2e708b67efd2995b%3A0x2566cad76422c384&engine=google_maps_photos&hl=en',
+		   'gps_coordinates': {'latitude': -7.013534099999999,
+		    'longitude': 110.3949988},
+		   'place_id_search': 'https://serpapi.com/search.json?data=%214m5%213m4%211s0x2e708b67efd2995b%3A0x2566cad76422c384%218m2%213d-7.013534099999999%214d110.3949988&engine=google_maps&google_domain=google.com&hl=en&type=place',
+		   'rating': 4.9,
+		   'reviews': 23,
+		   'type': 'Restaurant',
+		   'address': 'Stiepari Kampus Pascasarjana, Jl. Lamongan Raya, Sampangan, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50232, Indonesia',
+		   'open_state': 'Closed ⋅ Opens 11AM Mon',
+		   'hours': 'Closed ⋅ Opens 11AM Mon',
+		   'operating_hours': {'sunday': '11AM–8PM',
+		    'monday': '11AM–8PM',
+		    'tuesday': '11AM–8PM',
+		    'wednesday': '11AM–8PM',
+		    'thursday': '11AM–8PM',
+		    'friday': '11AM–8PM',
+		    'saturday': '11AM–8PM'},
+		   'phone': '+62 857-4201-2821',
+		   'service_options': {'dine_in': True, 'takeout': True, 'delivery': True},
+		   'thumbnail': 'https://lh5.googleusercontent.com/p/AF1QipOXl7uz-SQpnJO9PnYLz6P6R_gYJ8RyaqPqF3zt=w92-h92-k-no'}],
+		 'serpapi_pagination': {'next': 'https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&ll=%40-6.9978354%2C110.4072681%2C15z&q=mie+ayam&start=20&type=search'}}
+
+Code cell <TQAuHup5atuS>
+#%% [code]
+for i in range(10):
+  rating = results ["reviews"][i]["rating"]
+  print(rating)
+  reviews = results ["reviews"][i]["snippet"]
+  print(reviews)
+
+Code cell <1WOFV3R1bKz9>
+#%% [code]
+#6
+from serpapi import GoogleSearch
+
+params = {
+  "engine": "google_maps_reviews",
+  "data_id": "0x2e708ba124ed54f9:0x41dc391f56566aa9",
+  "api_key": "7dfc31a930d42a121191611e0a3617a7a8ada1e3fdaee846bce20f8e64576826"
+}
+
+search = GoogleSearch(params)
+results = search.get_dict()
+reviews = results["reviews"]
+
+Code cell <DHdRp3m6bMJT>
+#%% [code]
+results
+
+Code cell <DfjbQTMZbOUu>
+#%% [code]
+for i in range(10):
+  rating = results ["reviews"][i]["rating"]
+  print(rating)
+  reviews = results ["reviews"][i]["snippet"]
+  print(reviews)
+
+Code cell <LSn0gkCnbq4l>
+#%% [code]
+#7
+from serpapi import GoogleSearch
+
+params = {
+  "engine": "google_maps_reviews",
+  "data_id": "0x2e708b812ff25143:0x1e5d1fd8d664ea1f",
+  "api_key": "7dfc31a930d42a121191611e0a3617a7a8ada1e3fdaee846bce20f8e64576826"
+}
+
+search = GoogleSearch(params)
+results = search.get_dict()
+reviews = results["reviews"]
+
+Code cell <foqrKtJUbtPJ>
+#%% [code]
+results
+
+Code cell <GUlfKQUbbvcW>
+#%% [code]
+for i in range(10):
+  rating = results ["reviews"][i]["rating"]
+  print(rating)
+  reviews = results ["reviews"][i]["snippet"]
+  print(reviews)
+
+Code cell <Hvs60F7vcjh5>
+#%% [code]
+#8
+from serpapi import GoogleSearch
+
+params = {
+  "engine": "google_maps_reviews",
+  "data_id": "0x2e708b60137ed1b9:0xccd3466439f25f25",
+  "api_key": "7dfc31a930d42a121191611e0a3617a7a8ada1e3fdaee846bce20f8e64576826"
+}
+
+search = GoogleSearch(params)
+results = search.get_dict()
+reviews = results["reviews"]
+
+Code cell <nbs8kxrfcl6F>
+#%% [code]
+results
+
+Code cell <Fxo56e-ScoFs>
+#%% [code]
+for i in range(10):
+  rating = results ["reviews"][i]["rating"]
+  print(rating)
+  reviews = results ["reviews"][i]["snippet"]
+  print(reviews)
+
+Code cell <Z5D6syzEcvsy>
+#%% [code]
+#9
+from serpapi import GoogleSearch
+
+params = {
+  "engine": "google_maps_reviews",
+  "data_id": "0x2e708b59824042b3:0x7ac384a28a639c02",
+  "api_key": "7dfc31a930d42a121191611e0a3617a7a8ada1e3fdaee846bce20f8e64576826"
+}
+
+search = GoogleSearch(params)
+results = search.get_dict()
+reviews = results["reviews"]
+
+Code cell <3Km9YV4-cx53>
+#%% [code]
+results
+
+Code cell <1q9sIhHZcz2U>
+#%% [code]
+for i in range(10):
+  rating = results ["reviews"][i]["rating"]
+  print(rating)
+  reviews = results ["reviews"][i]["snippet"]
+  print(reviews)
+
+Code cell <DF6nB4j_c8Js>
+#%% [code]
+#10
+from serpapi import GoogleSearch
+
+params = {
+  "engine": "google_maps_reviews",
+  "data_id": "0x2e708b59824042b3:0x7ac384a28a639c02",
+  "api_key": "7dfc31a930d42a121191611e0a3617a7a8ada1e3fdaee846bce20f8e64576826"
+}
+
+search = GoogleSearch(params)
+results = search.get_dict()
+reviews = results["reviews"]
+
+Code cell <0fdU5icNdFh3>
+#%% [code]
+results
+
+Code cell <cL8aM1HDdHKd>
+#%% [code]
+for i in range(10):
+  rating = results ["reviews"][i]["rating"]
+  print(rating)
+  reviews = results ["reviews"][i]["snippet"]
+  print(reviews)
+
+Code cell <bp6voeDSdqI1>
+#%% [code]
+## case folding ##
+
+Code cell <hg1xFHeMd5y4>
+#%% [code]
+kalimat = "4.0 mie ayam murah porsi istimewa cuma 11k.tapi mie nya agak tercium bau sangit,mungkin air yg buat merebus mienya sdah hmpir habis dan perlu di refil kmbali"
+lower_case = kalimat.lower()
+print(lower_case)
+Execution output from Oct 9, 2022 11:01 PM
+0KB
+	Stream
+		4.0 mie ayam murah porsi istimewa cuma 11k.tapi mie nya agak tercium bau sangit,mungkin air yg buat merebus mienya sdah hmpir habis dan perlu di refil kmbali
+
+Code cell <kUgReU9leqk4>
+#%% [code]
+## tokenizing ##
+
+Code cell <o3gCNKb6ezdl>
+#%% [code]
+import nltk
+nltk.download('book')
+#or
+nltk.download('tests')
+#or
+nltk.download('all-corpora')# not recommended as it download huge amount of data.
+Execution output from Oct 9, 2022 11:06 PM
+20KB
+	Stream
+		[nltk_data] Downloading collection 'book'
+		[nltk_data]    | 
+		[nltk_data]    | Downloading package abc to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/abc.zip.
+		[nltk_data]    | Downloading package brown to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/brown.zip.
+		[nltk_data]    | Downloading package chat80 to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/chat80.zip.
+		[nltk_data]    | Downloading package cmudict to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/cmudict.zip.
+		[nltk_data]    | Downloading package conll2000 to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/conll2000.zip.
+		[nltk_data]    | Downloading package conll2002 to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/conll2002.zip.
+		[nltk_data]    | Downloading package dependency_treebank to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/dependency_treebank.zip.
+		[nltk_data]    | Downloading package genesis to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/genesis.zip.
+		[nltk_data]    | Downloading package gutenberg to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/gutenberg.zip.
+		[nltk_data]    | Downloading package ieer to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/ieer.zip.
+		[nltk_data]    | Downloading package inaugural to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/inaugural.zip.
+		[nltk_data]    | Downloading package movie_reviews to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/movie_reviews.zip.
+		[nltk_data]    | Downloading package nps_chat to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/nps_chat.zip.
+		[nltk_data]    | Downloading package names to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/names.zip.
+		[nltk_data]    | Downloading package ppattach to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/ppattach.zip.
+		[nltk_data]    | Downloading package reuters to /root/nltk_data...
+		[nltk_data]    | Downloading package senseval to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/senseval.zip.
+		[nltk_data]    | Downloading package state_union to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/state_union.zip.
+		[nltk_data]    | Downloading package stopwords to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/stopwords.zip.
+		[nltk_data]    | Downloading package swadesh to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/swadesh.zip.
+		[nltk_data]    | Downloading package timit to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/timit.zip.
+		[nltk_data]    | Downloading package treebank to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/treebank.zip.
+		[nltk_data]    | Downloading package toolbox to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/toolbox.zip.
+		[nltk_data]    | Downloading package udhr to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/udhr.zip.
+		[nltk_data]    | Downloading package udhr2 to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/udhr2.zip.
+		[nltk_data]    | Downloading package unicode_samples to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/unicode_samples.zip.
+		[nltk_data]    | Downloading package webtext to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/webtext.zip.
+		[nltk_data]    | Downloading package wordnet to /root/nltk_data...
+		[nltk_data]    | Downloading package wordnet_ic to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/wordnet_ic.zip.
+		[nltk_data]    | Downloading package words to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/words.zip.
+		[nltk_data]    | Downloading package maxent_treebank_pos_tagger to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping taggers/maxent_treebank_pos_tagger.zip.
+		[nltk_data]    | Downloading package maxent_ne_chunker to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping chunkers/maxent_ne_chunker.zip.
+		[nltk_data]    | Downloading package universal_tagset to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping taggers/universal_tagset.zip.
+		[nltk_data]    | Downloading package punkt to /root/nltk_data...
+		[nltk_data]    |   Unzipping tokenizers/punkt.zip.
+		[nltk_data]    | Downloading package book_grammars to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping grammars/book_grammars.zip.
+		[nltk_data]    | Downloading package city_database to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/city_database.zip.
+		[nltk_data]    | Downloading package tagsets to /root/nltk_data...
+		[nltk_data]    |   Unzipping help/tagsets.zip.
+		[nltk_data]    | Downloading package panlex_swadesh to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    | Downloading package averaged_perceptron_tagger to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping taggers/averaged_perceptron_tagger.zip.
+		[nltk_data]    | 
+		[nltk_data]  Done downloading collection book
+		[nltk_data] Downloading collection 'tests'
+		[nltk_data]    | 
+		[nltk_data]    | Downloading package averaged_perceptron_tagger to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package averaged_perceptron_tagger is already up-
+		[nltk_data]    |       to-date!
+		[nltk_data]    | Downloading package porter_test to /root/nltk_data...
+		[nltk_data]    |   Unzipping stemmers/porter_test.zip.
+		[nltk_data]    | Downloading package twitter_samples to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/twitter_samples.zip.
+		[nltk_data]    | Downloading package wmt15_eval to /root/nltk_data...
+		[nltk_data]    |   Unzipping models/wmt15_eval.zip.
+		[nltk_data]    | Downloading package subjectivity to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/subjectivity.zip.
+		[nltk_data]    | Downloading package framenet_v17 to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/framenet_v17.zip.
+		[nltk_data]    | Downloading package product_reviews_1 to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/product_reviews_1.zip.
+		[nltk_data]    | Downloading package product_reviews_2 to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/product_reviews_2.zip.
+		[nltk_data]    | Downloading package vader_lexicon to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    | Downloading package crubadan to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/crubadan.zip.
+		[nltk_data]    | Downloading package mte_teip5 to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/mte_teip5.zip.
+		[nltk_data]    | Downloading package sentence_polarity to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/sentence_polarity.zip.
+		[nltk_data]    | Downloading package universal_treebanks_v20 to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    | Downloading package panlex_swadesh to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package panlex_swadesh is already up-to-date!
+		[nltk_data]    | Downloading package nonbreaking_prefixes to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/nonbreaking_prefixes.zip.
+		[nltk_data]    | Downloading package perluniprops to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping misc/perluniprops.zip.
+		[nltk_data]    | Downloading package pros_cons to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/pros_cons.zip.
+		[nltk_data]    | Downloading package opinion_lexicon to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/opinion_lexicon.zip.
+		[nltk_data]    | Downloading package comparative_sentences to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/comparative_sentences.zip.
+		[nltk_data]    | 
+		[nltk_data]  Done downloading collection tests
+		[nltk_data] Downloading collection 'all-corpora'
+		[nltk_data]    | 
+		[nltk_data]    | Downloading package abc to /root/nltk_data...
+		[nltk_data]    |   Package abc is already up-to-date!
+		[nltk_data]    | Downloading package alpino to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/alpino.zip.
+		[nltk_data]    | Downloading package biocreative_ppi to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/biocreative_ppi.zip.
+		[nltk_data]    | Downloading package brown to /root/nltk_data...
+		[nltk_data]    |   Package brown is already up-to-date!
+		[nltk_data]    | Downloading package brown_tei to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/brown_tei.zip.
+		[nltk_data]    | Downloading package cess_cat to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/cess_cat.zip.
+		[nltk_data]    | Downloading package cess_esp to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/cess_esp.zip.
+		[nltk_data]    | Downloading package chat80 to /root/nltk_data...
+		[nltk_data]    |   Package chat80 is already up-to-date!
+		[nltk_data]    | Downloading package city_database to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package city_database is already up-to-date!
+		[nltk_data]    | Downloading package cmudict to /root/nltk_data...
+		[nltk_data]    |   Package cmudict is already up-to-date!
+		[nltk_data]    | Downloading package comparative_sentences to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package comparative_sentences is already up-to-
+		[nltk_data]    |       date!
+		[nltk_data]    | Downloading package comtrans to /root/nltk_data...
+		[nltk_data]    | Downloading package conll2000 to /root/nltk_data...
+		[nltk_data]    |   Package conll2000 is already up-to-date!
+		[nltk_data]    | Downloading package conll2002 to /root/nltk_data...
+		[nltk_data]    |   Package conll2002 is already up-to-date!
+		[nltk_data]    | Downloading package conll2007 to /root/nltk_data...
+		[nltk_data]    | Downloading package crubadan to /root/nltk_data...
+		[nltk_data]    |   Package crubadan is already up-to-date!
+		[nltk_data]    | Downloading package dependency_treebank to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package dependency_treebank is already up-to-date!
+		[nltk_data]    | Downloading package dolch to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/dolch.zip.
+		[nltk_data]    | Downloading package europarl_raw to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/europarl_raw.zip.
+		[nltk_data]    | Downloading package extended_omw to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    | Downloading package floresta to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/floresta.zip.
+		[nltk_data]    | Downloading package framenet_v15 to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/framenet_v15.zip.
+		[nltk_data]    | Downloading package framenet_v17 to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package framenet_v17 is already up-to-date!
+		[nltk_data]    | Downloading package gazetteers to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/gazetteers.zip.
+		[nltk_data]    | Downloading package genesis to /root/nltk_data...
+		[nltk_data]    |   Package genesis is already up-to-date!
+		[nltk_data]    | Downloading package gutenberg to /root/nltk_data...
+		[nltk_data]    |   Package gutenberg is already up-to-date!
+		[nltk_data]    | Downloading package ieer to /root/nltk_data...
+		[nltk_data]    |   Package ieer is already up-to-date!
+		[nltk_data]    | Downloading package inaugural to /root/nltk_data...
+		[nltk_data]    |   Package inaugural is already up-to-date!
+		[nltk_data]    | Downloading package indian to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/indian.zip.
+		[nltk_data]    | Downloading package jeita to /root/nltk_data...
+		[nltk_data]    | Downloading package kimmo to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/kimmo.zip.
+		[nltk_data]    | Downloading package knbc to /root/nltk_data...
+		[nltk_data]    | Downloading package lin_thesaurus to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/lin_thesaurus.zip.
+		[nltk_data]    | Downloading package mac_morpho to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/mac_morpho.zip.
+		[nltk_data]    | Downloading package machado to /root/nltk_data...
+		[nltk_data]    | Downloading package masc_tagged to /root/nltk_data...
+		[nltk_data]    | Downloading package movie_reviews to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package movie_reviews is already up-to-date!
+		[nltk_data]    | Downloading package mte_teip5 to /root/nltk_data...
+		[nltk_data]    |   Package mte_teip5 is already up-to-date!
+		[nltk_data]    | Downloading package names to /root/nltk_data...
+		[nltk_data]    |   Package names is already up-to-date!
+		[nltk_data]    | Downloading package nombank.1.0 to /root/nltk_data...
+		[nltk_data]    | Downloading package nonbreaking_prefixes to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package nonbreaking_prefixes is already up-to-date!
+		[nltk_data]    | Downloading package nps_chat to /root/nltk_data...
+		[nltk_data]    |   Package nps_chat is already up-to-date!
+		[nltk_data]    | Downloading package omw to /root/nltk_data...
+		[nltk_data]    | Downloading package omw-1.4 to /root/nltk_data...
+		[nltk_data]    | Downloading package opinion_lexicon to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package opinion_lexicon is already up-to-date!
+		[nltk_data]    | Downloading package panlex_swadesh to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package panlex_swadesh is already up-to-date!
+		[nltk_data]    | Downloading package paradigms to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/paradigms.zip.
+		[nltk_data]    | Downloading package pe08 to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/pe08.zip.
+		[nltk_data]    | Downloading package pil to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/pil.zip.
+		[nltk_data]    | Downloading package pl196x to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/pl196x.zip.
+		[nltk_data]    | Downloading package ppattach to /root/nltk_data...
+		[nltk_data]    |   Package ppattach is already up-to-date!
+		[nltk_data]    | Downloading package problem_reports to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/problem_reports.zip.
+		[nltk_data]    | Downloading package product_reviews_1 to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package product_reviews_1 is already up-to-date!
+		[nltk_data]    | Downloading package product_reviews_2 to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package product_reviews_2 is already up-to-date!
+		[nltk_data]    | Downloading package propbank to /root/nltk_data...
+		[nltk_data]    | Downloading package pros_cons to /root/nltk_data...
+		[nltk_data]    |   Package pros_cons is already up-to-date!
+		[nltk_data]    | Downloading package ptb to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/ptb.zip.
+		[nltk_data]    | Downloading package qc to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/qc.zip.
+		[nltk_data]    | Downloading package reuters to /root/nltk_data...
+		[nltk_data]    |   Package reuters is already up-to-date!
+		[nltk_data]    | Downloading package rte to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/rte.zip.
+		[nltk_data]    | Downloading package semcor to /root/nltk_data...
+		[nltk_data]    | Downloading package senseval to /root/nltk_data...
+		[nltk_data]    |   Package senseval is already up-to-date!
+		[nltk_data]    | Downloading package sentence_polarity to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package sentence_polarity is already up-to-date!
+		[nltk_data]    | Downloading package sentiwordnet to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/sentiwordnet.zip.
+		[nltk_data]    | Downloading package shakespeare to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/shakespeare.zip.
+		[nltk_data]    | Downloading package sinica_treebank to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/sinica_treebank.zip.
+		[nltk_data]    | Downloading package smultron to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/smultron.zip.
+		[nltk_data]    | Downloading package state_union to /root/nltk_data...
+		[nltk_data]    |   Package state_union is already up-to-date!
+		[nltk_data]    | Downloading package stopwords to /root/nltk_data...
+		[nltk_data]    |   Package stopwords is already up-to-date!
+		[nltk_data]    | Downloading package subjectivity to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package subjectivity is already up-to-date!
+		[nltk_data]    | Downloading package swadesh to /root/nltk_data...
+		[nltk_data]    |   Package swadesh is already up-to-date!
+		[nltk_data]    | Downloading package switchboard to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/switchboard.zip.
+		[nltk_data]    | Downloading package timit to /root/nltk_data...
+		[nltk_data]    |   Package timit is already up-to-date!
+		[nltk_data]    | Downloading package toolbox to /root/nltk_data...
+		[nltk_data]    |   Package toolbox is already up-to-date!
+		[nltk_data]    | Downloading package treebank to /root/nltk_data...
+		[nltk_data]    |   Package treebank is already up-to-date!
+		[nltk_data]    | Downloading package twitter_samples to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package twitter_samples is already up-to-date!
+		[nltk_data]    | Downloading package udhr to /root/nltk_data...
+		[nltk_data]    |   Package udhr is already up-to-date!
+		[nltk_data]    | Downloading package udhr2 to /root/nltk_data...
+		[nltk_data]    |   Package udhr2 is already up-to-date!
+		[nltk_data]    | Downloading package unicode_samples to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package unicode_samples is already up-to-date!
+		[nltk_data]    | Downloading package universal_treebanks_v20 to
+		[nltk_data]    |     /root/nltk_data...
+		[nltk_data]    |   Package universal_treebanks_v20 is already up-to-
+		[nltk_data]    |       date!
+		[nltk_data]    | Downloading package verbnet to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/verbnet.zip.
+		[nltk_data]    | Downloading package verbnet3 to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/verbnet3.zip.
+		[nltk_data]    | Downloading package webtext to /root/nltk_data...
+		[nltk_data]    |   Package webtext is already up-to-date!
+		[nltk_data]    | Downloading package wordnet to /root/nltk_data...
+		[nltk_data]    |   Package wordnet is already up-to-date!
+		[nltk_data]    | Downloading package wordnet2021 to /root/nltk_data...
+		[nltk_data]    | Downloading package wordnet31 to /root/nltk_data...
+		[nltk_data]    | Downloading package wordnet_ic to /root/nltk_data...
+		[nltk_data]    |   Package wordnet_ic is already up-to-date!
+		[nltk_data]    | Downloading package words to /root/nltk_data...
+		[nltk_data]    |   Package words is already up-to-date!
+		[nltk_data]    | Downloading package ycoe to /root/nltk_data...
+		[nltk_data]    |   Unzipping corpora/ycoe.zip.
+		[nltk_data]    | 
+		[nltk_data]  Done downloading collection all-corpora
+	text/plain
+		True
+
+Code cell <xdAN1W9Ae3X2>
+#%% [code]
+from nltk.tokenize import sent_tokenize, word_tokenize 
+kalimat = "Pertama kali nyoba mie ayam disini, yang katanya enak dan ternyata beneran enak."
+kalimat= kalimat+"Mie ayam yang lazat, Penggemar mie ayam harus nyoba.."
+tokens = word_tokenize(kalimat)
+print(tokens)
+Execution output from Oct 9, 2022 11:06 PM
+0KB
+	Stream
+		['Pertama', 'kali', 'nyoba', 'mie', 'ayam', 'disini', ',', 'yang', 'katanya', 'enak', 'dan', 'ternyata', 'beneran', 'enak.Mie', 'ayam', 'yang', 'lazat', ',', 'Penggemar', 'mie', 'ayam', 'harus', 'nyoba', '..']
+
+Code cell <bfvs2WEpe8F5>
+#%% [code]
+## stopword removal ##
+
+Code cell <FHk_Hd0vf-32>
+#%% [code]
+pip install Sastrawi
+Execution output from Oct 9, 2022 11:07 PM
+0KB
+	Stream
+		Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+		Collecting Sastrawi
+		  Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
+		[K     |████████████████████████████████| 209 kB 14.8 MB/s 
+		[?25hInstalling collected packages: Sastrawi
+		Successfully installed Sastrawi-1.0.1
+
+Code cell <BCiIWf68gLG0>
+#%% [code]
+from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
+factory = StopWordRemoverFactory()
+stopwords = factory.get_stop_words()
+print(stopwords)
+Execution output from Oct 9, 2022 11:08 PM
+1KB
+	Stream
+		['yang', 'untuk', 'pada', 'ke', 'para', 'namun', 'menurut', 'antara', 'dia', 'dua', 'ia', 'seperti', 'jika', 'jika', 'sehingga', 'kembali', 'dan', 'tidak', 'ini', 'karena', 'kepada', 'oleh', 'saat', 'harus', 'sementara', 'setelah', 'belum', 'kami', 'sekitar', 'bagi', 'serta', 'di', 'dari', 'telah', 'sebagai', 'masih', 'hal', 'ketika', 'adalah', 'itu', 'dalam', 'bisa', 'bahwa', 'atau', 'hanya', 'kita', 'dengan', 'akan', 'juga', 'ada', 'mereka', 'sudah', 'saya', 'terhadap', 'secara', 'agar', 'lain', 'anda', 'begitu', 'mengapa', 'kenapa', 'yaitu', 'yakni', 'daripada', 'itulah', 'lagi', 'maka', 'tentang', 'demi', 'dimana', 'kemana', 'pula', 'sambil', 'sebelum', 'sesudah', 'supaya', 'guna', 'kah', 'pun', 'sampai', 'sedangkan', 'selagi', 'sementara', 'tetapi', 'apakah', 'kecuali', 'sebab', 'selain', 'seolah', 'seraya', 'seterusnya', 'tanpa', 'agak', 'boleh', 'dapat', 'dsb', 'dst', 'dll', 'dahulu', 'dulunya', 'anu', 'demikian', 'tapi', 'ingin', 'juga', 'nggak', 'mari', 'nanti', 'melainkan', 'oh', 'ok', 'seharusnya', 'sebetulnya', 'setiap', 'setidaknya', 'sesuatu', 'pasti', 'saja', 'toh', 'ya', 'walau', 'tolong', 'tentu', 'amat', 'apalagi', 'bagaimanapun']
+
+Code cell <jj-Gp6V5gm-_>
+#%% [code]
+from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
+factory = StopWordRemoverFactory()
+stopword = factory.create_stop_word_remover()
+# Kalimat
+kalimat = "Mie ayam dengan kuah gurih cenderung asin  Mienya lembut, baksonya empuk dan berasa daging sapinya."
+stop = stopword.remove(kalimat)
+print(stop)
+Execution output from Oct 9, 2022 11:14 PM
+0KB
+	Stream
+		Mie ayam kuah gurih cenderung asin  Mienya lembut, baksonya empuk berasa daging sapinya.
+
+Code cell <Axxd7H2ohpib>
+#%% [code]
+## stemming ##
+
+Code cell <AYgv9Usphrql>
+#%% [code]
+pip install Sastrawi
+Execution output from Oct 9, 2022 11:14 PM
+0KB
+	Stream
+		Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+		Requirement already satisfied: Sastrawi in /usr/local/lib/python3.7/dist-packages (1.0.1)
+
+Code cell <_dJ8C87YhzfM>
+#%% [code]
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory# create stemmer
+factory = StemmerFactory()
+stemmer = factory.create_stemmer()# stemming process
+sentence = "Pangsit gorengnya renyah dan gurih. Enak.Tempat makan tidak cukup luas. "
+output   = stemmer.stem(sentence)
+print(output)
+Execution output from Oct 9, 2022 11:15 PM
+0KB
+	Stream
+		pangsit goreng renyah dan gurih enak tempat makan tidak cukup luas
+
